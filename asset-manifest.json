@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.794fe70e.css",
-    "main.js": "/static/js/main.0ab4737f.js",
-    "index.html": "/index.html",
-    "main.794fe70e.css.map": "/static/css/main.794fe70e.css.map",
-    "main.0ab4737f.js.map": "/static/js/main.0ab4737f.js.map"
+    "main.css": "/hamelsite2024/static/css/main.794fe70e.css",
+    "main.js": "/hamelsite2024/static/js/main.0ab4737f.js",
+    "index.html": "/hamelsite2024/index.html",
+    "main.794fe70e.css.map": "/hamelsite2024/static/css/main.794fe70e.css.map",
+    "main.0ab4737f.js.map": "/hamelsite2024/static/js/main.0ab4737f.js.map"
   },
   "entrypoints": [
     "static/css/main.794fe70e.css",
