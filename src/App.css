@@ -1,4 +1,242 @@
 .App {
-  
+    background-color: var(--background-secondary);
+    padding: 0;
+    min-height: 100vh;
+}
+
+#content {
+    width: 60%;
+    left: 27.5vw;
+    background-color: var(--background-thrice);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+@media (max-width: 768px) {
+    #content {
+        box-shadow: 0 -1rem 3rem rgba(0, 0, 0, 0.2), 0 1rem 3rem rgba(0, 0, 0, 0.2);
+
+        width: 100%;
+        left: 0;
+    }
+}
+
+
+
+.DynamicContainer {
+    position: fixed;
+}
+
+@media (max-width: 768px) {
+    .DynamicContainer {
+        position:relative;
+        width: 100% !important;
+        padding: 5% 10px;
+        inset: 0 !important;
+        box-sizing: border-box;
+    }
+}
+
+.SectionBox{
+    color: var(--text-soft);
+    padding: 1rem;
+}
+
+
+.SectionTitle{
+    text-align: center;
+    color: var(--text);
+}
+
+.SectionTitle::after{
+    content: "";
+
+    display: block;
+    margin: 12px auto 30px auto;
+    
+    width: 80%;
+    height: 1px;
+    background-color: var(--text-muted);
+
+}
+
+.SubSectionBox {
+    min-width: 250px;
+    max-width: 600px;
+
+    min-height: 200px;
+
+    border-radius: 15px;
+    transition: all .25s;
+
+    color: var(--text-soft);
+
+    background-color: var(--background-light);
+
+    box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.33);
+    transition: all .33s;
+}
+
+.SubSectionBox:hover{
+    box-shadow: 0px 0px 30px rgba(91 238 231 / 0.4);
+}
+
+.SubSectionBox h5{
+    color: var(--text);
+}
+
+
+.SelectedBox{
+    width: 100%;
+    background-color: var(--background-lighter) !important;
+}
+
+.MutedBox {
+    opacity: 0.5;
+}
+
+.highlighted-text{
+    cursor: pointer;
+    display: inline-block;
+}
+
+.highlight{
+    color: var(--text);
+    transition: color .33s;
+    font-weight: 600;
+    display: inline-block;    
+}
+
+.highlighted-text:hover .highlight{
+    color: var(--font-green);
+    animation: hop .15s calc(var(--index)*0.025s) forwards linear;
+}
+
+@keyframes hop{
+    0%, 100%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 768px) {
+    .highlight {
+        display: inline;
+    }
+    .highlighted-text{
+        display: inline;
+    }
+}
+
+#menu {
+    margin-top: 50px;
+}
+
+#menu li {
+    --color: var(--text-soft);
+    --size: 30px;
+    margin: 25px 0px;
+    width: 100px;
+    cursor: pointer;
+    user-select: none;
+    color: var(--color);
+    text-transform: uppercase;
+    transition: all .15s;
+    font-size: 0.85rem;
+}
+
+#menu li:hover,
+#menu li#selected {
+    --color: #eee;
+    --size: 50px;
+    font-weight: 600;
+}
+
+#menu li::after, #menu li#selected::after  {
+    content: "";
+    width: 0;
+    height: 1px;
+    margin: 5px 20px 5px -10%;
+    display: block;
+    background-color: var(--color);
+    transition: width .15s;
+}
+
+#menu li:hover::after, #menu li#selected::after {
+    width: 110%;
+}
+
+.TaggedText {
+    color: #21F5A0;
+    background-color: #083B33;
+    font-size: 0.8rem;
+    user-select: none;
+    cursor: pointer;
+}
+
+
+
+.ExpandingIcon {
+    width: 2.5rem;
+    border-radius: 25px;
+
+    margin: 10px 0px;
+
+    color: var(--text-soft);
+
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+
+    transition: all .25s;
+}
+
+.ExpandingIcon i {
+    padding: 0.35rem 0.5rem;
+    margin-left: .2rem;
+    margin-right: .2rem;
+
+}
+
+.ExpandingIcon p {
+    margin-top: 12px;
+    text-align: center;
+    width: 50%;
+}
+
+
+.ExpandingIcon:hover {
+    width: 8.5rem;
+    color: var(--text);
+    background-color: var(--background-lightest);
+}
+
+.ExpandingIcon:hover i {
+    padding: 0.35rem 0.5rem;
+    margin-left: .2rem;
+    animation: spin .3s forwards;
+}
+
+@keyframes spin {
+    to {
+        rotate: -360deg;
+    }
+}
+
+@media (max-width: 768px) {
+    .ExpandingIcon {
+        margin: 8px auto;
+        width: 38%;
+        background-color: var(--background-lightest);
+        color: var(--text);
+        
+    }
+
+    .ExpandingIcon:hover i {
+        padding: 0.35rem 0.5rem;
+        margin-left: .2rem;
+        animation: none;
+    }
 }
 

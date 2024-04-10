@@ -1,3 +1,37 @@
 :root{
-    --background: #333;
+    --background: #0e1b24;
+    --background-secondary: #0E1F2B;
+    --background-thrice: #102330;
+    
+    
+    --background-light: #172A38;
+    --background-lighter: #182D3B;
+    --background-lightest:#223D50;
+    
+    --text: #eee;
+    --text-soft: #cccd;
+    --text-muted: #ccc9;
+
+    --font-green: #05DA84;
+
+}
+
+.bg-green{
+    background-color: #07CF93 !important;
+}
+
+.bg-turq{
+    background-color: #18C9AB !important;
+}
+
+.bg-cyan{
+    background-color: #25D1D1 !important;
+}
+
+.bg-lite-blue{
+    background-color: #38B8DB !important;
+}
+
+.bg-blue{
+    background-color: #7CC6FF !important;
 }
