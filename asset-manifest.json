@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "/hamelsite2024/static/css/main.37e217b4.css",
-    "main.js": "/hamelsite2024/static/js/main.d49975e1.js",
+    "main.css": "/hamelsite2024/static/css/main.25207fb0.css",
+    "main.js": "/hamelsite2024/static/js/main.036b9df9.js",
     "static/media/shadow-stream.gif": "/hamelsite2024/static/media/shadow-stream.7892cdc1a943fa6b3f32.gif",
+    "static/media/snip-clip-preview.gif": "/hamelsite2024/static/media/snip-clip-preview.76b5ad168853003a4ca1.gif",
     "static/media/focus-flow.gif": "/hamelsite2024/static/media/focus-flow.025febed63105bc17f2b.gif",
     "static/media/shadow-stream.png": "/hamelsite2024/static/media/shadow-stream.b6eba333b1c883367448.png",
+    "static/media/snip-clip-preview.png": "/hamelsite2024/static/media/snip-clip-preview.4e4da1594cb89754c07e.png",
     "static/media/ramble-rumble-preview.gif": "/hamelsite2024/static/media/ramble-rumble-preview.580fedf4acf288c89468.gif",
+    "static/media/focus-flow.png": "/hamelsite2024/static/media/focus-flow.93c7519284c7ec5d8137.png",
     "static/media/ramble-rumble-preview.jpg": "/hamelsite2024/static/media/ramble-rumble-preview.0a5de235d13dba401b8b.jpg",
-    "static/media/focus-flow.png": "/hamelsite2024/static/media/focus-flow.9a6cf45755535e4e1fef.png",
+    "static/media/WD_Matthew_Hamel_Resume_2024.pdf": "/hamelsite2024/static/media/WD_Matthew_Hamel_Resume_2024.d310109e4d6f3a7f4fac.pdf",
     "index.html": "/hamelsite2024/index.html",
-    "main.37e217b4.css.map": "/hamelsite2024/static/css/main.37e217b4.css.map",
-    "main.d49975e1.js.map": "/hamelsite2024/static/js/main.d49975e1.js.map"
+    "main.25207fb0.css.map": "/hamelsite2024/static/css/main.25207fb0.css.map",
+    "main.036b9df9.js.map": "/hamelsite2024/static/js/main.036b9df9.js.map"
   },
   "entrypoints": [
-    "static/css/main.37e217b4.css",
-    "static/js/main.d49975e1.js"
+    "static/css/main.25207fb0.css",
+    "static/js/main.036b9df9.js"
   ]
 }
