@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hamelsite2024/static/css/main.7359da10.css",
-    "main.js": "/hamelsite2024/static/js/main.898beda7.js",
+    "main.css": "/hamelsite2024/static/css/main.f53b4da7.css",
+    "main.js": "/hamelsite2024/static/js/main.b7b786c4.js",
     "static/media/shadow-stream.gif": "/hamelsite2024/static/media/shadow-stream.7892cdc1a943fa6b3f32.gif",
     "static/media/snip-clip-preview.gif": "/hamelsite2024/static/media/snip-clip-preview.76b5ad168853003a4ca1.gif",
     "static/media/focus-flow.gif": "/hamelsite2024/static/media/focus-flow.025febed63105bc17f2b.gif",
@@ -12,11 +12,11 @@
     "static/media/ramble-rumble-preview.jpg": "/hamelsite2024/static/media/ramble-rumble-preview.0a5de235d13dba401b8b.jpg",
     "static/media/WD_Matthew_Hamel_Resume_2024.pdf": "/hamelsite2024/static/media/WD_Matthew_Hamel_Resume_2024.d310109e4d6f3a7f4fac.pdf",
     "index.html": "/hamelsite2024/index.html",
-    "main.7359da10.css.map": "/hamelsite2024/static/css/main.7359da10.css.map",
-    "main.898beda7.js.map": "/hamelsite2024/static/js/main.898beda7.js.map"
+    "main.f53b4da7.css.map": "/hamelsite2024/static/css/main.f53b4da7.css.map",
+    "main.b7b786c4.js.map": "/hamelsite2024/static/js/main.b7b786c4.js.map"
   },
   "entrypoints": [
-    "static/css/main.7359da10.css",
-    "static/js/main.898beda7.js"
+    "static/css/main.f53b4da7.css",
+    "static/js/main.b7b786c4.js"
   ]
 }
