@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/hamelsite2024/static/css/main.f53b4da7.css",
-    "main.js": "/hamelsite2024/static/js/main.a66e3834.js",
-    "static/media/shadow-stream.gif": "/hamelsite2024/static/media/shadow-stream.7892cdc1a943fa6b3f32.gif",
-    "static/media/snip-clip-preview.gif": "/hamelsite2024/static/media/snip-clip-preview.76b5ad168853003a4ca1.gif",
-    "static/media/focus-flow.gif": "/hamelsite2024/static/media/focus-flow.025febed63105bc17f2b.gif",
-    "static/media/shadow-stream.png": "/hamelsite2024/static/media/shadow-stream.b6eba333b1c883367448.png",
-    "static/media/snip-clip-preview.png": "/hamelsite2024/static/media/snip-clip-preview.4e4da1594cb89754c07e.png",
-    "static/media/ramble-rumble-preview.gif": "/hamelsite2024/static/media/ramble-rumble-preview.580fedf4acf288c89468.gif",
-    "static/media/focus-flow.png": "/hamelsite2024/static/media/focus-flow.93c7519284c7ec5d8137.png",
-    "static/media/ramble-rumble-preview.jpg": "/hamelsite2024/static/media/ramble-rumble-preview.0a5de235d13dba401b8b.jpg",
-    "static/media/WD_Matthew_Hamel_Resume_2024.pdf": "/hamelsite2024/static/media/WD_Matthew_Hamel_Resume_2024.d310109e4d6f3a7f4fac.pdf",
-    "index.html": "/hamelsite2024/index.html",
-    "main.f53b4da7.css.map": "/hamelsite2024/static/css/main.f53b4da7.css.map",
-    "main.a66e3834.js.map": "/hamelsite2024/static/js/main.a66e3834.js.map"
+    "main.css": "/static/css/main.f53b4da7.css",
+    "main.js": "/static/js/main.77b157ec.js",
+    "static/media/shadow-stream.gif": "/static/media/shadow-stream.7892cdc1a943fa6b3f32.gif",
+    "static/media/snip-clip-preview.gif": "/static/media/snip-clip-preview.76b5ad168853003a4ca1.gif",
+    "static/media/focus-flow.gif": "/static/media/focus-flow.025febed63105bc17f2b.gif",
+    "static/media/shadow-stream.png": "/static/media/shadow-stream.b6eba333b1c883367448.png",
+    "static/media/snip-clip-preview.png": "/static/media/snip-clip-preview.4e4da1594cb89754c07e.png",
+    "static/media/ramble-rumble-preview.gif": "/static/media/ramble-rumble-preview.580fedf4acf288c89468.gif",
+    "static/media/focus-flow.png": "/static/media/focus-flow.93c7519284c7ec5d8137.png",
+    "static/media/ramble-rumble-preview.jpg": "/static/media/ramble-rumble-preview.0a5de235d13dba401b8b.jpg",
+    "static/media/WD_Matthew_Hamel_Resume_2024.pdf": "/static/media/WD_Matthew_Hamel_Resume_2024.d310109e4d6f3a7f4fac.pdf",
+    "index.html": "/index.html",
+    "main.f53b4da7.css.map": "/static/css/main.f53b4da7.css.map",
+    "main.77b157ec.js.map": "/static/js/main.77b157ec.js.map"
   },
   "entrypoints": [
     "static/css/main.f53b4da7.css",
-    "static/js/main.a66e3834.js"
+    "static/js/main.77b157ec.js"
   ]
 }
