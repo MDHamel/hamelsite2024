@@ -1,37 +1,35 @@
 :root{
-    --background: #0e1b24;
-    --background-secondary: #0E1F2B;
-    --background-thrice: #102330;
+    --background: #171f27;
+    --background-secondary: #0F2335;
+    --background-thrice: #192936;
     
     
-    --background-light: #172A38;
-    --background-lighter: #182D3B;
-    --background-lightest:#223D50;
+    --background-light: #192F40;
+    --background-lighter: #1d3444;
+    --background-lightest:#243949;
     
     --text: #eee;
-    --text-soft: #cccd;
-    --text-muted: #ccc9;
+    --text-soft: #c8cccc;
+    --text-muted: #a8aaaa;
 
     --font-green: #05DA84;
+
+    --spotlight: #5ED1FF73;
 
 }
 
 .bg-green{
-    background-color: #07CF93 !important;
+    background-color: #16BE7E !important;
 }
 
 .bg-turq{
-    background-color: #18C9AB !important;
+    background-color: #21BDA8 !important;
 }
 
 .bg-cyan{
-    background-color: #25D1D1 !important;
-}
-
-.bg-lite-blue{
-    background-color: #38B8DB !important;
+    background-color: #1BCCCC !important;
 }
 
 .bg-blue{
-    background-color: #7CC6FF !important;
+    background-color: #27B3DA !important;
 }

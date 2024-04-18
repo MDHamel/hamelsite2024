@@ -1,6 +1,13 @@
 import { createContext, useContext, useState } from 'react';
 import diplomaSVG from "./assets/diploma.png";
-
+import ramblePNG from "./assets/ramble-rumble-preview.jpg"
+import rambleGIF from "./assets/ramble-rumble-preview.gif"
+import focusPNG from "./assets/focus-flow.png";
+import focusGIF from "./assets/focus-flow.gif";
+import streamPNG from "./assets/shadow-stream.png";
+import streamGIF from "./assets/shadow-stream.gif";
+import snipPNG from "./assets/snip-clip-preview.png";
+import snipGIF from "./assets/snip-clip-preview.gif";
 
 function SubSectionBox({ children }) {
     const [isSelected, setIsSelected] = useState(false)
@@ -57,7 +64,7 @@ function TaggedText({ children }) {
 
 export function AboutMe() {
     return (
-        <article className='mx-md-5'>
+        <article className='mx-md-5 pb-3'>
             <p className='mx-3 mx-md-5 px-2'>
                 Technology has always captivated me.
                 In high school, I joined an <Highlight>engineering curriculum</Highlight> that followed me from sophomore year to graduation, and it was here where I was exposed to coding.
@@ -102,7 +109,7 @@ export function Education() {
                             <p >
                                 After graduating highschool, I enrolled at Las Positas Community College and worked towards transferring to a four year university for my B.S.
                                 While here, I also formed a <Highlight>Programming Club</Highlight> with some friends and was named Vice President.
-                                I took courses that covered concepts such as <Highlight>Computer Science</Highlight>, <Highlight>Assembly Languages</Highlight>, <Highlight>Physics</Highlight>, <Highlight>2D and 3D Calculus</Highlight>, and more GE classes.
+                                I took courses that covered concepts such as <Highlight>Computer Science</Highlight>, <Highlight>Physics</Highlight>, <Highlight>2D and 3D Calculus</Highlight>, and more general education classes.
                                 After meeting the required classes and taking a few extra, I was able to transfer and receive A.S. in Computer Science.
                             </p>
                             <div className='d-flex flex-wrap w-100'>
@@ -120,7 +127,7 @@ export function Education() {
                 </SubSectionBox>
                 <SubSectionBox>
                     <div className="d-flex position-relative">
-                        <div className='bg-lite-blue d-flex justify-content-center d-flex flex-column text-center fw-bold ' style={{ minHeight: "100%", width: "25%" }}>
+                        <div className='bg-blue d-flex justify-content-center d-flex flex-column text-center fw-bold ' style={{ minHeight: "100%", width: "25%" }}>
                             <div className='px-1 text-light'>
                                 <p className='m-0 p-0'>B.S.</p>
                                 <p className='m-0 p-0'>Computer</p>
@@ -182,7 +189,6 @@ export function Education() {
 }
 
 export function Experience() {
-
     return (
         <article>
             <SelectedEventProvider>
@@ -200,16 +206,16 @@ export function Experience() {
                             <h5 className='fw-bold underline text-center mt-3'>Code Coach <span class="fw-normal">at</span> <b>theCoderSchool</b></h5>
                             <hr className='w-75 text-light text-center my-3 mx-auto' />
                             <p >
-                                During my tenure at <Highlight>theCoderSchool</Highlight>, I taught children aged 6-16 how to code and/or helped them with homework as individuals or in groups of two.
+                                During my tenure at <Highlight>theCoderSchool</Highlight>, I taught children aged 6-16 how to code through projects or helped them with homework.
                                 I tried to make each student's experience unique and exciting so that they would become <Highlight>passionate</Highlight> about their projects.
-                                During the summer, I was also responsible for <Highlight>organizing</Highlight> and <Highlight>instructing</Highlight> a larger number of students for <Highlight>Summer Camps</Highlight> that would meet for around 5-6 hours a day for one week.
-                                I often took <Highlight>initiative</Highlight> and would sign-up to teach multiple camps along with normal workload.
+                                During the summer, I was also responsible for <Highlight>organizing</Highlight> and <Highlight>instructing</Highlight> a large number of students for <Highlight>Summer Camps</Highlight> that would meet for around 5-6 hours a day for one week.
+                                I often took <Highlight>initiative</Highlight> and would sign up to teach multiple camps along with my usual workload.
                                 Projects ranged from beginners <Highlight>learning the basics</Highlight> to more advanced projects including <Highlight>Web Development</Highlight> and <Highlight>Game Development</Highlight>.
                             </p>
                             <div className='d-flex flex-wrap w-100'>
-                            <TaggedText>C++</TaggedText> <TaggedText>C#</TaggedText><TaggedText>Python</TaggedText><TaggedText>Java</TaggedText> <TaggedText>JavaScript</TaggedText>
-                            <TaggedText>HTML</TaggedText> <TaggedText>CSS</TaggedText> <TaggedText>Android Studio</TaggedText> <TaggedText>React.js</TaggedText> <TaggedText>Unity Game Engine</TaggedText> <TaggedText>Web Development</TaggedText>
-                            <TaggedText>Networking</TaggedText> 
+                                <TaggedText>C++</TaggedText> <TaggedText>C#</TaggedText><TaggedText>Python</TaggedText><TaggedText>Java</TaggedText> <TaggedText>JavaScript</TaggedText>
+                                <TaggedText>HTML</TaggedText> <TaggedText>CSS</TaggedText> <TaggedText>Android Studio</TaggedText> <TaggedText>React.js</TaggedText> <TaggedText>Unity Game Engine</TaggedText> <TaggedText>Web Development</TaggedText>
+                                <TaggedText>Networking</TaggedText>
 
                             </div>
                         </div>
@@ -230,11 +236,20 @@ export function Experience() {
                             <h5 className='fw-bold underline text-center mt-3'>Freelance Web Developer</h5>
                             <hr className='w-75 text-light text-center my-3 mx-auto' />
                             <p >
-                                
+                                Following graduation, I embarked on my <Highlight>freelance</Highlight> journey, developing <Highlight>applications and websites</Highlight> tailored to the unique needs of my clients.
+                                My passion lies in developing applications that exceed expectations both visually and functionally.
+                            </p>
+                            <p>
+                                My current projects consist of mostly <Highlight>web development</Highlight>, but I also have a few long-term <Highlight>software application</Highlight> projects that I contribute to.
+                                I meticulously test each application to ensure it delivers an <Highlight>exceptional</Highlight> user experience while being within the client's specifications.
+                            </p>
+                            <p>
+                                Through this journey, I've honed my <Highlight>technical skills</Highlight>, developed a <Highlight>keen eye for detail</Highlight>, and deepened my understanding of a <Highlight>user's needs</Highlight>.
+                                Each project I undertake is a new opportunity to <Highlight>learn, grow, and contribute</Highlight> to the success of my clients' ventures, making every project a unique and rewarding experience.
                             </p>
                             <div className='d-flex flex-wrap w-100'>
-                                
-
+                                <TaggedText>HTML</TaggedText> <TaggedText>CSS</TaggedText> <TaggedText>Bootstrap</TaggedText> <TaggedText>SASS</TaggedText> <TaggedText>React.js</TaggedText>  <TaggedText>JavaScript</TaggedText> <TaggedText>TypeScript</TaggedText>
+                                <TaggedText>Java</TaggedText> <TaggedText>C#</TaggedText> <TaggedText>Python</TaggedText>
                             </div>
                         </div>
                     </div>
@@ -244,6 +259,72 @@ export function Experience() {
     )
 }
 
-export function Contact() {
+function ProjectBox({ title, href, tags, png_src, gif_src, children }) {
+    return (
+        <div className='ProjectBox d-flex px-3 flex-column  flex-md-row'>
+            <div className='ProjectImage d-flex flex-column justify-content-center mx-auto' >
+                <img className="w-100 h-50 m-auto border border-1 border-light rounded-2 png" src={png_src} />
+                <img className="w-100 h-50 m-auto border border-1 border-light rounded-2 gif" src={gif_src} />
+            </div>
 
+            <div className='ProjectText py-3 ps-4 pe-2 my-auto ' >
+                <a target="_blank" className="ProjectLink" href={href}><h5 class="fw-bolder mt-4 " >{title}<i class="bi-link-45deg ms-1" /></h5></a>
+                <div>
+                    {children}
+                </div>
+                <div className='my-2 d-flex flex-wrap'>
+                    {tags.map((item) => { return <TaggedText>{item}</TaggedText> })}
+                </div>
+            </div>
+
+        </div>
+    )
+}
+
+export function Projects() {
+
+    return (
+        <article className='w-100'>
+            <SelectedEventProvider>
+                <SubSectionBox>
+                    <ProjectBox title="Ramble Rumble" tags={["HTML", "CSS", "JavaScript", "React.js", "Bootstrap"]} href="https://ramblerumble.matthewhamel.dev/" png_src={ramblePNG} gif_src={rambleGIF}>
+                        <p>A Wordle-inspired letter tile game with no limits on how many times you can play. Features two game modes, Timed Trial and High Score, for a challenging or relaxed gameplay experience.</p>
+                    </ProjectBox>
+                </SubSectionBox>
+                <SubSectionBox>
+                    <ProjectBox title="Focus Flow" tags={["HTML", "CSS", "JavaScript", "React.js", "Bootstrap"]} href="https://focus.matthewhamel.dev/" png_src={focusPNG} gif_src={focusGIF}>
+                        <p>A Pomodoro Technique based timer designed to enhance productivity and prevent burn-out by alerting the user when to take breaks. Timer features custom times and a wide array of themes to choose from.</p>
+                    </ProjectBox>
+                </SubSectionBox>
+                <SubSectionBox>
+                    <ProjectBox title="Shadow Stream" tags={["C#", "OpenCV", "Windows Forms"]} href="https://github.com/MDHamel/ShadowStream" png_src={streamPNG} gif_src={streamGIF}>
+                        <p>A light-weight capture card streaming application. Users can stream video and audio from an external capture card straight to their computer without switching inputs. Supports 1080p at 30fps or 720p at 30/60 fps with minimal audio lag.</p>
+                    </ProjectBox>
+                </SubSectionBox>
+                <SubSectionBox>
+                    <ProjectBox title="Snip Clip" tags={["C#", "Xbox Game Bar SDK", "UWP"]} href="https://github.com/MDHamel/SnipClip" png_src={snipPNG} gif_src={snipGIF}>
+                        <p>A simple, light-weight video editing tool integrated into the Windows Game Bar. Simply press <i class="bi bi-windows d-inline fs-6"></i> + G and add Snip Clip to your Game Bar Overlay. Easily crop the times of your clips and save videos anywhere on your PC. </p>
+                    </ProjectBox>
+                </SubSectionBox>
+            </SelectedEventProvider>
+            <div class="d-grid gap-2 col-md-10 col-sm-12 mx-auto">
+                <button class="btn btn-dark border border-2 py-2 fw-bold" type="button" onClick={() => { window.open("https://github.com/MDHamel?tab=repositories") }}>
+                    <i class="bi bi-github" />&nbsp;
+                    Find More of My Projects on GitHub
+                </button>
+            </div>
+        </article>
+    )
+}
+
+export function Footer() {
+    return (
+        <footer className='w-75 mx-auto my-5 p-1 text-center'>
+            <small>
+                This site was developed by me, <Highlight>Matthew Hamel</Highlight>, using a blend of <Highlight>HTML</Highlight>, <Highlight>CSS</Highlight>, <Highlight>React.js</Highlight>, and <Highlight>Bootstrap</Highlight>.
+                Check out the code on GitHub&nbsp;
+                <a className='link-underline-light text-light' href='https://github.com/MDHamel/hamelsite2024' target='_blank'>Here</a>.
+            </small>
+        </footer>
+    )
 }
