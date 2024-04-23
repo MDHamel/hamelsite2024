@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f53b4da7.css",
-    "main.js": "/static/js/main.14cd0989.js",
+    "main.css": "/static/css/main.93a3b3d9.css",
+    "main.js": "/static/js/main.57280654.js",
     "static/media/shadow-stream.gif": "/static/media/shadow-stream.7892cdc1a943fa6b3f32.gif",
     "static/media/snip-clip-preview.gif": "/static/media/snip-clip-preview.76b5ad168853003a4ca1.gif",
     "static/media/focus-flow.gif": "/static/media/focus-flow.025febed63105bc17f2b.gif",
@@ -12,11 +12,11 @@
     "static/media/ramble-rumble-preview.jpg": "/static/media/ramble-rumble-preview.0a5de235d13dba401b8b.jpg",
     "static/media/WD_Matthew_Hamel_Resume_2024.pdf": "/static/media/WD_Matthew_Hamel_Resume_2024.a44b8171c02b731320bc.pdf",
     "index.html": "/index.html",
-    "main.f53b4da7.css.map": "/static/css/main.f53b4da7.css.map",
-    "main.14cd0989.js.map": "/static/js/main.14cd0989.js.map"
+    "main.93a3b3d9.css.map": "/static/css/main.93a3b3d9.css.map",
+    "main.57280654.js.map": "/static/js/main.57280654.js.map"
   },
   "entrypoints": [
-    "static/css/main.f53b4da7.css",
-    "static/js/main.14cd0989.js"
+    "static/css/main.93a3b3d9.css",
+    "static/js/main.57280654.js"
   ]
 }
