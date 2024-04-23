@@ -71,6 +71,7 @@
 }
 
 .ProjectLink, .ProjectLink h5{
+    margin-left: 39.25%;
     color: var(--text);
     transition: all .25s;
     font-weight: 400;
@@ -80,7 +81,6 @@
 .ProjectLink i{
     display: inline-block;
     transform: translateY(3px);
-
 }
 
 .ProjectLink:hover, .ProjectLink:hover h5{
@@ -109,24 +109,20 @@
 }
 
 .ProjectImage{
-    width: 35%;
+    box-sizing: border-box !important;
 }
 
 .ProjectText{
-    width: 65%;
+    
 }
 
 @media (max-width: 768px) {
 
-    .ProjectImage{
-        width: 85%;
-        margin-top: 35px;
-    }
-
-    .ProjectText{
+    .ProjectLink, .ProjectLink h5{
         width: 100%;
+        text-align: center;
+        margin-left: 0;
     }
-    
 }
 
 #content {
@@ -149,6 +145,7 @@
 
 .DynamicContainer {
     position: fixed;
+    padding: 0;
 }
 
 @media (max-width: 768px) {
@@ -179,7 +176,8 @@
     margin: 12px 0 30px 0;
     
     width: 100%;
-    height: 1px;
+    height: 2px;
+
     background-color: var(--text-muted);
 
 }
@@ -259,8 +257,8 @@
 #menu li {
     --color: var(--text-soft);
     --size: 30px;
-    margin: 30px 0px;
-    width: 95px;
+    margin: 0px;
+    width: 90px;
     font-weight: 500;
     cursor: pointer;
     user-select: none;
@@ -280,15 +278,16 @@
 #menu li::after, #menu li#selected::after  {
     content: "";
     width: 0;
-    height: 1px;
-    margin: 5px 20px 5px -10%;
+    height: 2px;
+    border-radius: 2px;
+    margin: 5px -5px;
     display: block;
     background-color: var(--color);
     transition: width .2s;
 }
 
 #menu li:hover::after, #menu li#selected::after {
-    width: 110%;
+    width: 105%;
 }
 
 .TaggedText {
@@ -303,7 +302,7 @@
     width: 2.5rem;
     border-radius: 25px;
 
-    margin: 10px 0px;
+    margin: 5px 0px;
 
     color: var(--text-muted);
 
@@ -317,14 +316,13 @@
 
 .ExpandingIcon i {
     padding: 0.35rem 0.5rem;
-    margin-left: .2rem;
-    margin-right: .2rem;
+    margin: 0;
 
     animation: intro-up .175s calc(calc(var(--index)*.125s) + 1s) backwards ease-out;
 }
 
 .ExpandingIcon p {
-    margin-top: 12px;
+    margin-top: 14px;
     text-align: center;
     width: 50%;
 }
@@ -332,6 +330,8 @@
 
 .ExpandingIcon:hover {
     width: 8.5rem;
+    margin: 5px -18px;
+
     color: var(--text);
     background-color: var(--background-lightest);
 }

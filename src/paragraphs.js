@@ -46,7 +46,7 @@ function SelectedEventProvider({ children }) {
 
 
 function Highlight({ children }) {
-    const highlighter = (letter, i) => { return letter == " " ? <span> </span> : <div className='highlight' style={{ "--index": i }}>{letter}</div> };
+    const highlighter = (letter, i) => { return letter === " " ? <span> </span> : <div className='highlight' style={{ "--index": i }}>{letter}</div> };
     return (
         <div className='highlighted-text'>
             {children.split("").map(highlighter)}
@@ -64,7 +64,7 @@ function TaggedText({ children }) {
 
 export function AboutMe() {
     return (
-        <article className='mx-md-5 pb-3'>
+        <article className='mx-md-5 pt-3'>
             <p className='mx-3 mx-md-5 px-2'>
                 Technology has always captivated me.
                 In high school, I joined an <Highlight>engineering curriculum</Highlight> that followed me from sophomore year to graduation, and it was here where I was exposed to coding.
@@ -100,7 +100,7 @@ export function Education() {
                                 <p className='m-0 p-0'>Computer</p>
                                 <p className='m-0 p-0'>Science</p>
                             </div>
-                            <img src={diplomaSVG} width={"40%"} className='mx-auto mt-2 px-md-2' />
+                            <img alt="A diploma." src={diplomaSVG} width={"40%"} className='mx-auto mt-2 px-md-2' />
                         </div>
                         <div className='my-3 mx-4' style={{ width: "85%" }}>
                             <h5 className='fw-bold underline text-center mt-3'>Las Positas Community College</h5>
@@ -133,7 +133,7 @@ export function Education() {
                                 <p className='m-0 p-0'>Computer</p>
                                 <p className='m-0 p-0'>Science</p>
                             </div>
-                            <img src={diplomaSVG} width={"40%"} className='mx-auto mt-2 px-md-2' />
+                            <img alt="A diploma." src={diplomaSVG} width={"40%"} className='mx-auto mt-2 px-md-2' />
                         </div>
                         <div className='my-3 mx-4' style={{ width: "82%" }}>
                             <h5 className='fw-bold underline text-center mt-3'>California State University East Bay</h5>
@@ -261,18 +261,20 @@ export function Experience() {
 
 function ProjectBox({ title, href, tags, png_src, gif_src, children }) {
     return (
-        <div className='ProjectBox d-flex px-3 flex-column  flex-md-row'>
-            <div className='ProjectImage d-flex flex-column justify-content-center mx-auto' >
-                <img className="w-100 h-50 m-auto border border-1 border-light rounded-2 png" src={png_src} />
-                <img className="w-100 h-50 m-auto border border-1 border-light rounded-2 gif" src={gif_src} />
-            </div>
+        <div className='ProjectBox px-3 '>
 
-            <div className='ProjectText py-3 ps-4 pe-2 my-auto ' >
-                <a target="_blank" className="ProjectLink" href={href}><h5 class="fw-bolder mt-4 " >{title}<i class="bi-link-45deg ms-1" /></h5></a>
-                <div>
-                    {children}
+            <div className='py-3 ps-4 pe-2 my-auto w-100' >
+                <a target="_blank" rel="noreferrer" className="ProjectLink" href={href}><h5 class="fw-bolder mt-3 mt-md-0" >{title}<i class="bi-link-45deg ms-1" /></h5></a>
+                <div className='d-flex flex-column flex-md-row my-3'>
+                    <div className='ProjectImage d-flex flex-column flex-md-row justify-content-center mx-auto ms-md-0 me-md-2 my-md-1 my-3 col-md-4 col-12' style={{minHeight:"120px"}}>
+                        <img alt={`The "${title}" project, created by Matthew Hamel`} className="w-100 h-100 m-auto border border-1 border-light rounded-3 png" src={png_src} />
+                        <img alt={`A demonstration of the "${title}" project, created by Matthew Hamel`} className="w-100 h-100 m-auto border border-1 border-light rounded-3 gif" src={gif_src} />
+                    </div>
+                    <div className='col-md-7 col-12 mx-0 mx-md-4 ProjectText'>
+                        {children}
+                    </div>
                 </div>
-                <div className='my-2 d-flex flex-wrap'>
+                <div className='mt-4 mb-2 d-flex flex-wrap justify-content-md-start justify-content-center  w-100 h-100'>
                     {tags.map((item) => { return <TaggedText>{item}</TaggedText> })}
                 </div>
             </div>
@@ -288,22 +290,22 @@ export function Projects() {
             <SelectedEventProvider>
                 <SubSectionBox>
                     <ProjectBox title="Ramble Rumble" tags={["HTML", "CSS", "JavaScript", "React.js", "Bootstrap"]} href="https://ramblerumble.matthewhamel.dev/" png_src={ramblePNG} gif_src={rambleGIF}>
-                        <p>A Wordle-inspired letter tile game with no limits on how many times you can play. Features two game modes, Timed Trial and High Score, for a challenging or relaxed gameplay experience.</p>
+                        <p className='m-0'>A Wordle-inspired letter tile game with no limits on how many times you can play. Features two game modes, Timed Trial and High Score, for a challenging or relaxed gameplay experience.</p>
                     </ProjectBox>
                 </SubSectionBox>
                 <SubSectionBox>
                     <ProjectBox title="Focus Flow" tags={["HTML", "CSS", "JavaScript", "React.js", "Bootstrap"]} href="https://focus.matthewhamel.dev/" png_src={focusPNG} gif_src={focusGIF}>
-                        <p>A Pomodoro Technique based timer designed to enhance productivity and prevent burn-out by alerting the user when to take breaks. Timer features custom times and a wide array of themes to choose from.</p>
+                        <p className='m-0'>A Pomodoro Technique based timer designed to enhance productivity and prevent burn-out by alerting the user when to take breaks. Timer features custom times and a wide array of themes to choose from.</p>
                     </ProjectBox>
                 </SubSectionBox>
                 <SubSectionBox>
                     <ProjectBox title="Shadow Stream" tags={["C#", "OpenCV", "Windows Forms"]} href="https://github.com/MDHamel/ShadowStream" png_src={streamPNG} gif_src={streamGIF}>
-                        <p>A light-weight capture card streaming application. Users can stream video and audio from an external capture card straight to their computer without switching inputs. Supports 1080p at 30fps or 720p at 30/60 fps with minimal audio lag.</p>
+                        <p className='m-0'>A light-weight capture card streaming application. Users can stream video and audio from an external capture card straight to their computer without switching inputs. Supports 1080p at 30fps or 720p at 30/60 fps with minimal audio lag.</p>
                     </ProjectBox>
                 </SubSectionBox>
                 <SubSectionBox>
-                    <ProjectBox title="Snip Clip" tags={["C#", "Xbox Game Bar SDK", "UWP"]} href="https://github.com/MDHamel/SnipClip" png_src={snipPNG} gif_src={snipGIF}>
-                        <p>A simple, light-weight video editing tool integrated into the Windows Game Bar. Simply press <i class="bi bi-windows d-inline fs-6"></i> + G and add Snip Clip to your Game Bar Overlay. Easily crop the times of your clips and save videos anywhere on your PC. </p>
+                    <ProjectBox title="Snip Clip" tags={["C#", "Game Bar SDK", "UWP"]} href="https://github.com/MDHamel/SnipClip" png_src={snipPNG} gif_src={snipGIF}>
+                        <p className='m-0'>A simple, light-weight video editing tool integrated into the Windows Game Bar. Simply press <i class="bi bi-windows d-inline fs-6"></i> + G and add Snip Clip to your Game Bar Overlay. Easily crop the times of your clips and save videos anywhere on your PC. </p>
                     </ProjectBox>
                 </SubSectionBox>
             </SelectedEventProvider>
@@ -323,7 +325,7 @@ export function Footer() {
             <small>
                 This site was developed by me, <Highlight>Matthew Hamel</Highlight>, using a blend of <Highlight>HTML</Highlight>, <Highlight>CSS</Highlight>, <Highlight>React.js</Highlight>, and <Highlight>Bootstrap</Highlight>.
                 Check out the code on GitHub&nbsp;
-                <a className='link-underline-light text-light' href='https://github.com/MDHamel/hamelsite2024' target='_blank'>Here</a>.
+                <a className='link-underline-light text-light' href='https://github.com/MDHamel/hamelsite2024' target='_blank' rel="noreferrer">Here</a>.
             </small>
         </footer>
     )
