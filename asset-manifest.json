@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.c1a03652.css",
-    "main.js": "/static/js/main.639a1a1d.js",
-    "static/media/shadow-stream.gif": "/static/media/shadow-stream.7892cdc1a943fa6b3f32.gif",
-    "static/media/snip-clip-preview.gif": "/static/media/snip-clip-preview.76b5ad168853003a4ca1.gif",
-    "static/media/focus-flow.gif": "/static/media/focus-flow.025febed63105bc17f2b.gif",
-    "static/media/shadow-stream.png": "/static/media/shadow-stream.b6eba333b1c883367448.png",
-    "static/media/snip-clip-preview.png": "/static/media/snip-clip-preview.4e4da1594cb89754c07e.png",
-    "static/media/ramble-rumble-preview.gif": "/static/media/ramble-rumble-preview.580fedf4acf288c89468.gif",
-    "static/media/focus-flow.png": "/static/media/focus-flow.93c7519284c7ec5d8137.png",
-    "static/media/ramble-rumble-preview.jpg": "/static/media/ramble-rumble-preview.0a5de235d13dba401b8b.jpg",
+    "main.css": "/static/css/main.056fe2f3.css",
+    "main.js": "/static/js/main.e06e026c.js",
+    "static/media/shadow-stream.webm": "/static/media/shadow-stream.286f471129caa3b2cff3.webm",
+    "static/media/shadow-stream.webp": "/static/media/shadow-stream.2cf821ad2be41d562aa5.webp",
+    "static/media/snip-clip.webm": "/static/media/snip-clip.ed5ad10759b1cf23fafc.webm",
+    "static/media/focus-flow.webm": "/static/media/focus-flow.d72164aeb30f8cad599b.webm",
+    "static/media/snip-clip-preview.webp": "/static/media/snip-clip-preview.6d30f5dec9bbf87813b6.webp",
     "static/media/WD_Matthew_Hamel_Resume_2024.pdf": "/static/media/WD_Matthew_Hamel_Resume_2024.a44b8171c02b731320bc.pdf",
+    "static/media/focus-flow.webp": "/static/media/focus-flow.a523c95a87df58afb6db.webp",
+    "static/media/ramble-rumble-preview.webm": "/static/media/ramble-rumble-preview.3c285427bcc4aa572640.webm",
+    "static/media/ramble-rumble-preview.webp": "/static/media/ramble-rumble-preview.35504567bdf4e9abc0a7.webp",
     "index.html": "/index.html",
-    "main.c1a03652.css.map": "/static/css/main.c1a03652.css.map",
-    "main.639a1a1d.js.map": "/static/js/main.639a1a1d.js.map"
+    "static/media/diploma.webp": "/static/media/diploma.91fa79bb4331a5b04099.webp",
+    "main.056fe2f3.css.map": "/static/css/main.056fe2f3.css.map",
+    "main.e06e026c.js.map": "/static/js/main.e06e026c.js.map"
   },
   "entrypoints": [
-    "static/css/main.c1a03652.css",
-    "static/js/main.639a1a1d.js"
+    "static/css/main.056fe2f3.css",
+    "static/js/main.e06e026c.js"
   ]
 }
