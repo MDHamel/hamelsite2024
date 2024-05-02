@@ -18,69 +18,73 @@ function CurrentSectionProvider({ children }) {
 
 function App() {
   return (
-    <div className="App container h-100 w-100 d-flex flex-column flex-md-row" >
-      <CurrentSectionProvider>
-        <DynamicContainer width='25vw'>
-          <div className='fluid-container ps-md-5 mt-5 pt-5 w-100 mb-5'>
-            <div className='d-flex flex-column'>
-              <section className='my-4'>
-                <div className='overflow-hidden'>
-                  <h1 id="Name" className='display-5 text-light text-center pb-2'>Matthew Hamel</h1>
-                </div>
-                <hr id="NameDivider" className='w-100 text-center border-2' />
-                <div className='overflow-hidden'>
-                  <h3 id="JobTitle" className='display-6 fs-4 text-light text-center pt-3'>Web and Software Developer</h3>
-                </div>
-              </section >
-              <section className='my-4'>
-                <h6 className='row my-4'>
-                  <b className='text-light col-md-4 col-4'><i class="bi bi-geo-alt-fill pe-2"></i>Location</b>
-                  <span className='col-md-8 col-8'>San Francisco Bay Area, California</span>
-                </h6 >
-                <h6 className='row my-4'>
-                  <b className='text-light col-md-4 col-4'><i class="bi bi-envelope-fill pe-2"></i>E-mail</b>
-                  <span className='col-md-8 col-8'>matt@matthewhamel.dev</span>
-                </h6 >
-              </section>
+    <main className='container mx-auto my-0 p-0'>
+      <div className="App container-fluid d-flex flex-column flex-md-row position-relative " >
+        <CurrentSectionProvider>
+
+          <DynamicContainer width=''>
+            <div className='fluid-container ps-md-5 mt-1 mt-md-5 pt-0 w-100 mb-5'>
+              <div className='d-flex flex-column'>
+                <section className='my-4'>
+                  <div className='overflow overflow-hidden  pb-2'>
+                    <p id="Name"  className='display-5 text-light text-center overflow-hidden m-0'>Matthew Hamel</p>
+                  </div>
+                  <hr id="NameDivider" className='w-100 text-center border-2' />
+                  <div className='overflow-hidden'>
+                    <p id="JobTitle" className='display-6 fs-4 text-light text-center pt-3'>Web and Software Developer</p>
+                  </div>
+                </section >
+                <section className='my-4'>
+                  <p className='row my-4 fs-6'>
+                    <b className='text-light col-md-4 col-4'><i className="bi bi-geo-alt-fill pe-2"></i>Location</b>
+                    <span className='col-md-8 col-8'>San Francisco Bay Area, California</span>
+                  </p >
+                  <p className='row my-4 fs-6'>
+                    <b className='text-light col-md-4 col-4'><i className="bi bi-envelope-fill pe-2"></i>E-mail</b>
+                    <span className='col-md-8 col-8'>matt@matthewhamel.dev</span>
+                  </p >
+                </section>
+              </div>
             </div>
-            <Menu />
-          </div>
-        </DynamicContainer>
+          </DynamicContainer>
 
 
-        <div id="content" className='fluid-container d-flex position-relative' >
-          <div className='w-100'>
-            <SectionBox title="About Me">
-              <figure className='py-3' />
-              <AboutMe />
-            </SectionBox>
-            <SectionBox title="Education">
-              <Education />
-            </SectionBox>
-            <SectionBox title="Experience">
-              <Experience />
-            </SectionBox>
-            <SectionBox title="Projects">
-              <Projects />
-            </SectionBox>
-            <Footer />
-          </div>
-        </div>
+          <div id="content" className='' >
+            <div className='w-100'>
+              <Menu />
 
-        <DynamicContainer width='25vw' bottom='3vh'>
-          <section className='mx-0 ps-md-5'>
-            <h4 className='SectionTitle d-md-none mx-5 my-5'>Links</h4>
-            <div className='Links d-flex flex-wrap justify-content-between'>
-              <ExpandingIcon icon="bi-file-earmark-pdf-fill" text="Résumé" url={resumepdf} index="0" />
-              <ExpandingIcon icon="bi-envelope-at-fill" text="Email" url="mailto:matt@matthewhamel.dev" index="1" />
-              <ExpandingIcon icon="bi-linkedin" text="LinkedIn" url="https://www.linkedin.com/in/mattdhamel/" index="2" />
-              <ExpandingIcon icon="bi-github" text="GitHub" url="https://github.com/MDHamel" index="3" />
-              <ExpandingIcon icon="bi-twitter-x" text="Twitter" url="https://twitter.com/TheHamelDev" index="4" />
+              <SectionBox title="About Me">
+                <AboutMe />
+              </SectionBox>
+              <SectionBox title="Education">
+                <Education />
+              </SectionBox>
+              <SectionBox title="Experience">
+                <Experience />
+              </SectionBox>
+              <SectionBox title="Projects">
+                <Projects />
+              </SectionBox>
+              <Footer />
             </div>
-          </section>
-        </DynamicContainer>
-      </CurrentSectionProvider>
-    </div>
+          </div>
+
+          <DynamicContainer width='' bottom='3vh'>
+            <section className='mx-0 ps-md-5 mb-3 mb-md-0'>
+              <h4 className='d-md-none mx-auto text-center my-4 text-light'>Links</h4>
+              <div className='Links d-flex flex-wrap justify-content-between'>
+                <ExpandingIcon icon="bi-file-earmark-pdf-fill" text="Résumé" url={resumepdf} index="4" />
+                <ExpandingIcon icon="bi-envelope-at-fill" text="Email" url="mailto:matt@matthewhamel.dev" index="3" />
+                <ExpandingIcon icon="bi-linkedin" text="LinkedIn" url="https://www.linkedin.com/in/mattdhamel/" index="2" />
+                <ExpandingIcon icon="bi-github" text="GitHub" url="https://github.com/MDHamel" index="1" />
+                <ExpandingIcon icon="bi-twitter-x" text="Twitter" url="https://twitter.com/TheHamelDev" index="0" />
+              </div>
+            </section>
+          </DynamicContainer>
+        </CurrentSectionProvider>
+        <figure id="AppBackground" className='container' />
+      </div>
+    </main>
   );
 }
 
@@ -108,7 +112,7 @@ export const useIntersection = (element, rootMargin) => {
 function SectionBox({ title, children }) {
 
   const triggerRef = useRef(null);
-  const isVisible = useIntersection(triggerRef, "-48%");
+  const isVisible = useIntersection(triggerRef, "-49%");
   const { setCurrentSection } = useContext(currentSectionContext);
 
 
@@ -120,7 +124,7 @@ function SectionBox({ title, children }) {
 
 
   return (
-    <section id={title} className='SectionBox mt-5 py-4' ref={triggerRef} >
+    <section id={title.replace(" ", "")} className='SectionBox' style={{ paddingTop: '75px' }} ref={triggerRef} >
       <p className="SectionTitle h2 fw-bold d-block d-sm-none" >{title}</p>
       {children}
     </section>
@@ -131,11 +135,11 @@ function Menu() {
   const { currentSection } = useContext(currentSectionContext);
 
   const sections = ["About Me", "Education", "Experience", "Projects"]
-  
+
   return (
-    <ul id="menu" className='text-light list-unstyled d-md-inline-block d-none user-select-none ms-0 row '>
-      {sections.map((val, i) => { return (<a className='text-decoration-none' href={`#${val}`}><li id={currentSection === val ? "selected" : ""} className='col-8 my-2'>{val}</li></a>) })}
-    </ul>
+    <nav id="menu" className='text-light list-unstyled user-select-none d-none d-md-flex justify-content-evenly '>
+      {sections.map((val, i) => { return (<a key={i} className='text-decoration-none' href={`#${val.replace(" ", "")}`} id={currentSection === val ? "selected" : ""} style={{ "--index": i }}>{val}</a>) })}
+    </nav>
   )
 }
 
@@ -146,7 +150,7 @@ function ExpandingIcon({ icon, text, url, index }) {
   return (
     <div className='ExpandingIcon d-flex' onClick={() => { window.open(url, '_blank') }}>
       <i className={`bi fs-4 ${icon}`} style={{ "--index": index }} />
-      <p className='ms-2 h6 fw-bold '>{text}</p>
+      <p className='h6 fw-bold'>{text}</p>
     </div>
   )
 }

@@ -2,12 +2,14 @@
     --background: #171f27;
     --background-secondary: #0F2335;
     --background-thrice: #192936;
+    --background-thrice-transparent: #192936cf;
     
     
     --background-light: #192F40;
     --background-lighter: #1d3444;
     --background-lightest:#243949;
     
+    --text-bright: #fff;
     --text: #eee;
     --text-soft: #c8cccc;
     --text-muted: #a8aaaa;
@@ -18,18 +20,23 @@
 
 }
 
-.bg-green{
-    background-color: #16BE7E !important;
-}
-
-.bg-turq{
-    background-color: #21BDA8 !important;
+.text-white{
+    color: var(--text-bright)
 }
 
 .bg-cyan{
-    background-color: #1BCCCC !important;
+    background-color: #0ba5a5 !important;
 }
 
 .bg-blue{
-    background-color: #27B3DA !important;
+    background-color: #1b88bb !important;
 }
+
+.bg-green{
+    background-color: #0fb173 !important;
+}
+
+.bg-turq{
+    background-color: #07aaa2 !important;
+}
+

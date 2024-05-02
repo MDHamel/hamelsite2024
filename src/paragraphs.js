@@ -1,13 +1,13 @@
-import { createContext, useContext, useState } from 'react';
-import diplomaSVG from "./assets/diploma.png";
-import ramblePNG from "./assets/ramble-rumble-preview.jpg"
-import rambleGIF from "./assets/ramble-rumble-preview.gif"
-import focusPNG from "./assets/focus-flow.png";
-import focusGIF from "./assets/focus-flow.gif";
-import streamPNG from "./assets/shadow-stream.png";
-import streamGIF from "./assets/shadow-stream.gif";
-import snipPNG from "./assets/snip-clip-preview.png";
-import snipGIF from "./assets/snip-clip-preview.gif";
+import { createContext, useContext, useState, useRef } from 'react';
+import diplomaSVG from "./assets/diploma.webp";
+import ramblePNG from "./assets/ramble-rumble-preview.webp"
+import rambleGIF from "./assets/ramble-rumble-preview.webm"
+import focusPNG from "./assets/focus-flow.webp";
+import focusGIF from "./assets/focus-flow.webm";
+import streamPNG from "./assets/shadow-stream.webp";
+import streamGIF from "./assets/shadow-stream.webm";
+import snipPNG from "./assets/snip-clip-preview.webp";
+import snipGIF from "./assets/snip-clip.webm";
 
 function SubSectionBox({ children }) {
     const [isSelected, setIsSelected] = useState(false)
@@ -25,13 +25,6 @@ function SubSectionBox({ children }) {
     );
 }
 
-/*
-<SelectedEventProvider>
-  <SubSectionBox><p>THIS IS A TEST OF YOUR EMERGENCY BROADCAST SYSTEM</p> <TaggedText>C++</TaggedText> <TaggedText>JavaScript</TaggedText></SubSectionBox>
-  <SubSectionBox><p>the second one</p> <TaggedText>C++</TaggedText> <TaggedText>JavaScript</TaggedText></SubSectionBox>
-</SelectedEventProvider>
-*/
-
 const selectedEventContext = createContext();
 
 function SelectedEventProvider({ children }) {
@@ -46,11 +39,11 @@ function SelectedEventProvider({ children }) {
 
 
 function Highlight({ children }) {
-    const highlighter = (letter, i) => { return letter === " " ? <span> </span> : <div className='highlight' style={{ "--index": i }}>{letter}</div> };
+    const highlighter = (letter, i) => { return letter === " " ? <span key={i}> </span> : <span key={i} className='highlight' style={{ "--index": i }}>{letter}</span> };
     return (
-        <div className='highlighted-text'>
+        <span className='highlighted-text'>
             {children.split("").map(highlighter)}
-        </div>
+        </span>
     )
 }
 
@@ -64,23 +57,23 @@ function TaggedText({ children }) {
 
 export function AboutMe() {
     return (
-        <article className='mx-md-5 pt-3'>
-            <p className='mx-3 mx-md-5 px-2'>
+        <article className='mx-md-5'>
+            <p className='mx-4 mx-md-5'>
                 Technology has always captivated me.
-                In high school, I joined an <Highlight>engineering curriculum</Highlight> that followed me from sophomore year to graduation, and it was here where I was exposed to coding.
-                Over one summer, I taught myself <Highlight>Java</Highlight> and started making <Highlight>Minecraft Mods</Highlight>.
-                In my junior year, I joined the <Highlight>robotics club</Highlight> with friends, learned <Highlight>Python</Highlight>, and competed with other school in robotics competitions.
+                In high school, I joined an engineering curriculum that followed me from sophomore year to graduation, and it was here where I was exposed to coding.
+                Over one summer, I taught myself <Highlight>Java</Highlight> and started making Minecraft Mods.
+                In my junior year, I joined the robotics club with friends, learned <Highlight>Python</Highlight>, and competed with other school in robotics competitions.
             </p>
-            <p className='mx-3 mx-md-5 px-2'>
+            <p className='mx-4 mx-md-5'>
                 After graduating high school, I pursued a degree in <Highlight>Computer Science</Highlight>.
-                At the same time, I started working at <Highlight>theCoderSchool</Highlight> as a <Highlight>Code Coach</Highlight> (a coding tutor).
-                I taught children aged 6-17 in <Highlight> Java</Highlight>, <Highlight>Python</Highlight>, <Highlight>C++</Highlight>, <Highlight>C#</Highlight>, <Highlight>Unity Game Development</Highlight>, <Highlight>Web Development</Highlight>, and <Highlight>more</Highlight>.
+                At the same time, I started working at <Highlight>theCoderSchool</Highlight> as a Code Coach (a coding tutor).
+                I taught children aged 6-17 in Java, Python, C#, C++, Unity Game Development, Web Development, and more.
             </p>
-            <p className='mx-3 mx-md-5 px-2'>
+            <p className='mx-4 mx-md-5'>
                 Today, I primarily focus on my <Highlight>Freelance Web Developer</Highlight> career and develop other applications during my free time.
-                From my <Highlight>video streaming application</Highlight> to my <Highlight>replayable Wordle clone</Highlight>, I am constantly looking for new personal projects to put my soul into.
+                From my video streaming application to my replayable Wordle clone, I am constantly looking for new personal projects to put my soul into.
             </p>
-            <p className='mx-3 mx-md-5 px-2'>
+            <p className='mx-4 mx-md-5'>
                 When I'm not toiling away on a project, you can find me <Highlight>playing games</Highlight> online with friends (or solo), <Highlight>cooking/baking</Highlight> delicious food, playing with my beloved dog <Highlight>Emma</Highlight>, or hanging out with my <Highlight>family</Highlight>.
             </p>
         </article>
@@ -94,8 +87,8 @@ export function Education() {
             <SelectedEventProvider>
                 <SubSectionBox>
                     <div className="d-flex position-relative">
-                        <div className='bg-cyan d-flex justify-content-center d-flex flex-column text-center fw-bold' style={{ minHeight: "100%", width: "25%" }}>
-                            <div className='px-1 text-light'>
+                        <div className='bg-cyan d-flex justify-content-center d-flex flex-column text-center fw-bold w-25' style={{ minHeight: "100%" }}>
+                            <div className='px-1 text-white'>
                                 <p className='m-0 p-0'>A.S.</p>
                                 <p className='m-0 p-0'>Computer</p>
                                 <p className='m-0 p-0'>Science</p>
@@ -127,8 +120,8 @@ export function Education() {
                 </SubSectionBox>
                 <SubSectionBox>
                     <div className="d-flex position-relative">
-                        <div className='bg-blue d-flex justify-content-center d-flex flex-column text-center fw-bold ' style={{ minHeight: "100%", width: "25%" }}>
-                            <div className='px-1 text-light'>
+                        <div className='bg-blue d-flex justify-content-center d-flex flex-column text-center fw-bold w-25' style={{ minHeight: "100%", }}>
+                            <div className='px-1 text-white'>
                                 <p className='m-0 p-0'>B.S.</p>
                                 <p className='m-0 p-0'>Computer</p>
                                 <p className='m-0 p-0'>Science</p>
@@ -152,7 +145,7 @@ export function Education() {
                             <span className='ms-2'><Highlight>Networking</Highlight></span>
                             <div className='d-flex flex-wrap w-100 mb-4 mt-2'>
                                 <TaggedText>OSI Layers</TaggedText> <TaggedText>Web Packets</TaggedText> <TaggedText>Web Security</TaggedText>
-                                <TaggedText>IOT</TaggedText> <TaggedText>Internet Protocols</TaggedText> <TaggedText>TCP/UDP</TaggedText>
+                                <TaggedText>TCP/UDP</TaggedText>
                             </div>
 
                             <span className='ms-2'><Highlight>Database Architecture</Highlight></span>
@@ -194,16 +187,16 @@ export function Experience() {
             <SelectedEventProvider>
                 <SubSectionBox>
                     <div className="d-flex position-relative">
-                        <div className='bg-green d-flex justify-content-center d-flex flex-column text-center fw-bold' style={{ minHeight: "100%", width: "25%" }}>
-                            <div className='px-1 text-light'>
+                        <div className='bg-green d-flex justify-content-center d-flex flex-column text-center fw-bold w-25' style={{ minHeight: "100%" }}>
+                            <div className='px-1 text-white'>
                                 <p className='m-0 p-0'>Nov. 2016</p>
-                                <p class="m-1">to</p>
+                                <p className="m-1">to</p>
                                 <p className='m-0 p-0'>July 2021</p>
                             </div>
-                            <i class="bi bi-journal-code text-light mx-auto my-3 h1" ></i>
+                            <i className="bi bi-journal-code text-light mx-auto my-3 h1" ></i>
                         </div>
                         <div className='my-3 mx-4' style={{ width: "85%" }}>
-                            <h5 className='fw-bold underline text-center mt-3'>Code Coach <span class="fw-normal">at</span> <b>theCoderSchool</b></h5>
+                            <h5 className='fw-bold underline text-center mt-3'>Code Coach <span className="fw-normal">at</span> <b>theCoderSchool</b></h5>
                             <hr className='w-75 text-light text-center my-3 mx-auto' />
                             <p >
                                 During my tenure at <Highlight>theCoderSchool</Highlight>, I taught children aged 6-16 how to code through projects or helped them with homework.
@@ -223,14 +216,14 @@ export function Experience() {
                 </SubSectionBox>
                 <SubSectionBox>
                     <div className="d-flex position-relative">
-                        <div className='bg-turq d-flex justify-content-center d-flex flex-column text-center fw-bold' style={{ minHeight: "100%", width: "25%" }}>
-                            <div className='px-1 text-light'>
+                        <div className='bg-turq d-flex justify-content-center d-flex flex-column text-center fw-bold w-25' style={{ minHeight: "100%" }}>
+                            <div className='px-1 text-white'>
                                 <p className='m-0 p-0'>July 2021 </p>
-                                <p class="m-1">to</p>
+                                <p className="m-1">to</p>
                                 <p className='m-0 p-0'>Now</p>
 
                             </div>
-                            <i class="bi bi-laptop text-light mx-auto my-3 h1" ></i>
+                            <i className="bi bi-laptop text-light mx-auto my-3 h1" ></i>
                         </div>
                         <div className='my-3 mx-4' style={{ width: "85%" }}>
                             <h5 className='fw-bold underline text-center mt-3'>Freelance Web Developer</h5>
@@ -260,22 +253,32 @@ export function Experience() {
 }
 
 function ProjectBox({ title, href, tags, png_src, gif_src, children }) {
+    const vid = useRef(0)
     return (
-        <div className='ProjectBox px-3 '>
+        <div className='ProjectBox px-3'
+            onMouseOver={event => { vid.current.play().catch((e) => { }) }}
+            onMouseOut={event => { vid.current.pause();}}
 
-            <div className='py-3 ps-4 pe-2 my-auto w-100' >
-                <a target="_blank" rel="noreferrer" className="ProjectLink" href={href}><h5 class="fw-bolder mt-3 mt-md-0" >{title}<i class="bi-link-45deg ms-1" /></h5></a>
-                <div className='d-flex flex-column flex-md-row my-3'>
-                    <div className='ProjectImage d-flex flex-column flex-md-row justify-content-center mx-auto ms-md-0 me-md-2 my-md-1 my-3 col-md-4 col-12' style={{minHeight:"120px"}}>
-                        <img alt={`The "${title}" project, created by Matthew Hamel`} className="w-100 h-100 m-auto border border-1 border-light rounded-3 png" src={png_src} />
-                        <img alt={`A demonstration of the "${title}" project, created by Matthew Hamel`} className="w-100 h-100 m-auto border border-1 border-light rounded-3 gif" src={gif_src} />
+        >
+            <div className='py-3 ps-4 pe-2 my-auto w-100 ' >
+                <div className='d-flex flex-column-reverse flex-md-row my-3'>
+                    <div className='ProjectImage justify-content-center mx-auto ms-md-0 me-md-2 my-md-1 my-3 col-md-4 col-12' style={{ minHeight: "120px" }}>
+                        <video muted loop
+                            ref={vid}
+                            onMouseOver={event => event.target.play()}
+
+                            className="w-100 h-100 m-auto border border-1 border-light rounded-3"
+                            poster={png_src}>
+                            <source src={gif_src} type="video/webm" />
+                        </video>
                     </div>
-                    <div className='col-md-7 col-12 mx-0 mx-md-4 ProjectText'>
+                    <div className='col-md-7 col-12 mx-0 mx-md-4 mb-3 mb-md-0 ProjectText'>
+                        <a target="_blank" rel="noreferrer" className="ProjectLink" href={href}><h5 className="fw-bolder my-2 mb-md-3 mt-md-0" >{title}<i className="bi-link-45deg ms-1" /></h5></a>
                         {children}
                     </div>
                 </div>
-                <div className='mt-4 mb-2 d-flex flex-wrap justify-content-md-start justify-content-center  w-100 h-100'>
-                    {tags.map((item) => { return <TaggedText>{item}</TaggedText> })}
+                <div className='mt-4 d-flex flex-wrap  justify-content-md-start justify-content-center w-100'>
+                    {tags.map((item, i) => { return <span className='mb-3' key={i}><TaggedText>{item}</TaggedText></span> })}
                 </div>
             </div>
 
@@ -300,18 +303,19 @@ export function Projects() {
                 </SubSectionBox>
                 <SubSectionBox>
                     <ProjectBox title="Shadow Stream" tags={["C#", "OpenCV", "Windows Forms"]} href="https://github.com/MDHamel/ShadowStream" png_src={streamPNG} gif_src={streamGIF}>
-                        <p className='m-0'>A light-weight capture card streaming application. Users can stream video and audio from an external capture card straight to their computer without switching inputs. Supports 1080p at 30fps or 720p at 30/60 fps with minimal audio lag.</p>
+                        <p className='m-0'>A light-weight capture card streaming application. Users can stream video and audio from an external capture card straight to their computer. Supports 1080p at 30fps or 720p at 30/60 fps with minimal audio lag.</p>
                     </ProjectBox>
                 </SubSectionBox>
                 <SubSectionBox>
                     <ProjectBox title="Snip Clip" tags={["C#", "Game Bar SDK", "UWP"]} href="https://github.com/MDHamel/SnipClip" png_src={snipPNG} gif_src={snipGIF}>
-                        <p className='m-0'>A simple, light-weight video editing tool integrated into the Windows Game Bar. Simply press <i class="bi bi-windows d-inline fs-6"></i> + G and add Snip Clip to your Game Bar Overlay. Easily crop the times of your clips and save videos anywhere on your PC. </p>
+                        <p className='m-0'>A simple, light-weight video editing tool integrated into the Windows Game Bar. Easily crop clips and save videos anywhere on your PC. </p>
                     </ProjectBox>
                 </SubSectionBox>
             </SelectedEventProvider>
-            <div class="d-grid gap-2 col-md-10 col-sm-12 mx-auto">
-                <button class="btn btn-dark border border-2 py-2 fw-bold" type="button" onClick={() => { window.open("https://github.com/MDHamel?tab=repositories") }}>
-                    <i class="bi bi-github" />&nbsp;
+
+            <div className="d-grid mx-md-5 mx-0 mb-2 p-0 ">
+                <button className="btn btn-dark border border-2 py-2 fw-bold col-12 mx-auto mt-2" type="button" onClick={() => { window.open("https://github.com/MDHamel?tab=repositories") }}>
+                    <i className="bi bi-github" />&nbsp;
                     Find More of My Projects on GitHub
                 </button>
             </div>
@@ -321,11 +325,12 @@ export function Projects() {
 
 export function Footer() {
     return (
-        <footer className='w-75 mx-auto my-5 p-1 text-center'>
+        <footer className='col-12 col-md-9 mx-auto my-5 px-2 px-md-1 text-center'>
             <small>
-                This site was developed by me, <Highlight>Matthew Hamel</Highlight>, using a blend of <Highlight>HTML</Highlight>, <Highlight>CSS</Highlight>, <Highlight>React.js</Highlight>, and <Highlight>Bootstrap</Highlight>.
-                Check out the code on GitHub&nbsp;
-                <a className='link-underline-light text-light' href='https://github.com/MDHamel/hamelsite2024' target='_blank' rel="noreferrer">Here</a>.
+                This site was developed by me, <Highlight>Matthew Hamel</Highlight>, using a blend of <Highlight>HTML</Highlight>, <Highlight>CSS</Highlight>, <Highlight>React.js</Highlight>, and <Highlight>Bootstrap</Highlight>.&nbsp;
+
+                Check out the &nbsp;
+                <a className='link-underline-light text-light' href='https://github.com/MDHamel/hamelsite2024' target='_blank' rel="noreferrer">code on GitHub</a>.
             </small>
         </footer>
     )

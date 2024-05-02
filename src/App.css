@@ -2,53 +2,65 @@
     font-family: "Poppins", sans-serif !important;
     font-weight: 400;
 
-    background-color: var(--background-secondary);
+    top: 0;
+
     padding: 0;
-    min-height: 100vh;
 
     color: var(--text-soft);
+}
 
+#AppBackground {
+    position: fixed;
+    top: 0;
+
+    min-height: 100vh;
+    z-index: -100;
+
+    background-color: var(--background-secondary);
     box-shadow: 0 0 3rem rgba(0, 0, 0, 0.55);
 }
 
-#Name{
+
+
+#Name {
     overflow: hidden;
     font-weight: 300;
-    animation: introName .5s ease-in-out backwards;
+    animation: introName .45s ease-in-out backwards;
 }
 
-@keyframes introName{
-    from{
-        transform: translateY(250%);
+@keyframes introName {
+    from {
+        transform: translateY(280%);
         scale: .25;
     }
-    to{
+
+    to {
         transform: translateY(0);
         scale: 1;
 
     }
 }
 
-#JobTitle{
+#JobTitle {
     font-weight: 200;
-    animation: introJob .5s .25s ease-in-out backwards;
+    animation: introJob .5s .3s ease-in-out backwards;
 
 }
 
-@keyframes introJob{
-    from{
+@keyframes introJob {
+    from {
         transform: translateY(-250%);
         scale: .25;
-       
+
     }
-    to{
+
+    to {
         transform: translateY(0);
         scale: 1;
-
     }
 }
 
-#NameDivider{
+#NameDivider {
     opacity: 1;
     margin: 0 auto;
     height: 3px;
@@ -56,69 +68,51 @@
     animation: introGlow .25s .7s backwards;
 }
 
-@keyframes introGlow{
-    from{
-        box-shadow: 20px 20px 25rem var(--spotlight);
+@keyframes introGlow {
+    from {
         border-color: var(--text);
         border-width: 3px;
     }
-    to{
-        box-shadow: none;
-        border-width: 1px;
 
+    to {
+        border-width: 1px;
         border-color: var(--text-muted);
     }
 }
 
-.ProjectLink, .ProjectLink h5{
-    margin-left: 39.25%;
+.ProjectLink,
+.ProjectLink h5 {
     color: var(--text);
     transition: all .25s;
     font-weight: 400;
     text-decoration: none;
 }
 
-.ProjectLink i{
+.ProjectLink i {
     display: inline-block;
     transform: translateY(3px);
 }
 
-.ProjectLink:hover, .ProjectLink:hover h5{
+.ProjectLink:hover,
+.ProjectLink:hover h5 {
     color: var(--font-green) !important;
 }
 
-
-.ProjectBox .png{
-    display: block;
-}
-
-.ProjectBox:hover .png{
-    display: none;
-}
-
-.ProjectBox .gif{
-    display: none;
-}
-
-.ProjectBox:hover .gif{
-    display: block;
-}
-
-.ProjectBox img{
+.ProjectBox video {
     object-fit: cover;
+    min-height: 168px;
 }
 
-.ProjectImage{
+.ProjectImage {
     box-sizing: border-box !important;
 }
 
-.ProjectText{
-    
-}
+.ProjectText {}
 
 @media (max-width: 768px) {
 
-    .ProjectLink, .ProjectLink h5{
+    .ProjectLink,
+    .ProjectLink h5 {
         width: 100%;
         text-align: center;
         margin-left: 0;
@@ -127,13 +121,16 @@
 
 #content {
     width: 60%;
-    left: 27.5vw;
+    position: absolute;
+    right: 0;
+
     background-color: var(--background-thrice);
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.55);
 }
 
 @media (max-width: 768px) {
     #content {
+        position: relative;
         box-shadow: -1rem -1rem 3rem rgba(0, 0, 0, 0.33), 1rem 1rem 3rem rgba(0, 0, 0, 0.33);
 
         width: 100%;
@@ -141,40 +138,45 @@
     }
 }
 
-
-
 .DynamicContainer {
     position: fixed;
+    min-width: 450px;
     padding: 0;
 }
 
 @media (max-width: 768px) {
     .DynamicContainer {
-        position:relative;
+        position: relative;
+        min-width: 100%;
         width: 100% !important;
-        padding: 5% 10px;
+        padding: 0.75rem;
+        margin-top: 50px;
         inset: 0 !important;
         box-sizing: border-box;
     }
+
+    .SectionBox {
+        padding: 0.75rem !important;
+    }
 }
 
-.SectionBox{
+.SectionBox {
     color: var(--text-soft);
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 
-.SectionTitle{
+.SectionTitle {
     text-align: center;
     color: var(--text);
 }
 
-.SectionTitle::after{
+.SectionTitle::after {
     content: "";
 
     display: block;
-    margin: 12px 0 30px 0;
-    
+    margin: 15px 0 25px 0;
+
     width: 100%;
     height: 2px;
 
@@ -184,7 +186,7 @@
 
 .SubSectionBox {
     min-width: 250px;
-    max-width: 600px;
+    max-width: 650px;
 
     min-height: 200px;
 
@@ -199,16 +201,16 @@
     transition: all .25s;
 }
 
-.SubSectionBox:hover{
+.SubSectionBox:hover {
     box-shadow: 0px 0px 30px var(--spotlight);
 }
 
-.SubSectionBox h5{
+.SubSectionBox h5 {
     color: var(--text);
 }
 
 
-.SelectedBox{
+.SelectedBox {
     width: 100%;
     background-color: var(--background-lighter) !important;
 }
@@ -218,28 +220,31 @@
     filter: brightness(.85)
 }
 
-.highlighted-text{
+.highlighted-text {
     cursor: pointer;
     display: inline-block;
 }
 
-.highlight{
+.highlight {
     color: var(--text);
     transition: color .33s;
     font-weight: 600;
-    display: inline-block;    
+    display: inline-block;
 }
 
-.highlighted-text:hover .highlight{
+.highlighted-text:hover .highlight {
     color: var(--font-green);
     animation: hop .15s calc(var(--index)*0.025s) forwards linear;
 }
 
-@keyframes hop{
-    0%, 100%{
+@keyframes hop {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
-    50%{
+
+    50% {
         transform: translateY(-5px);
     }
 }
@@ -248,46 +253,87 @@
     .highlight {
         display: inline;
     }
-    .highlighted-text{
+
+    .highlighted-text {
         display: inline;
     }
 }
 
+#AboutMe {
+    padding-top: 85px !important;
+}
 
-#menu li {
+#menu {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    right: 0;
+    margin: 0;
+    z-index: 100;
+
+    padding: 20px 0 15px 0;
+
+    backdrop-filter: blur(6px);
+    background-color: var(--background-thrice-transparent);
+
+}
+
+#menu a {
+    position: relative;
     --color: var(--text-soft);
-    --size: 30px;
     margin: 0px;
-    width: 90px;
+    padding: 5px 20px;
     font-weight: 500;
     cursor: pointer;
     user-select: none;
     color: var(--color);
+    text-align: center;
     text-transform: uppercase;
     transition: all .2s;
     font-size: .9rem;
+
+    animation: introNav calc(calc(.2s * var(--index)) + .7s) .6s ease-in-out backwards;
 }
 
-#menu li:hover,
-#menu li#selected {
+@keyframes introNav {
+    from {
+        transform: translateY(-250%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+
+}
+
+#menu a::before {
+    content: "";
+    height: 100%;
+    border-left: 2px var(--text-muted);
+}
+
+#menu a:hover,
+#menu a#selected {
     --color: #eee;
-    --size: 50px;
     font-weight: 700;
 }
 
-#menu li::after, #menu li#selected::after  {
+#menu a::after,
+#menu a#selected::after {
     content: "";
     width: 0;
     height: 2px;
     border-radius: 2px;
-    margin: 5px -5px;
+    margin: 5px -20px;
     display: block;
+    position: absolute;
     background-color: var(--color);
     transition: width .2s;
 }
 
-#menu li:hover::after, #menu li#selected::after {
-    width: 105%;
+#menu a:hover::after,
+#menu a#selected::after {
+    width: 100%;
 }
 
 .TaggedText {
@@ -299,9 +345,9 @@
 }
 
 .ExpandingIcon {
-    width: 2.5rem;
+    position: relative;
+    width: 24px;
     border-radius: 25px;
-
     margin: 5px 0px;
 
     color: var(--text-muted);
@@ -310,83 +356,87 @@
     cursor: pointer;
     user-select: none;
 
-
     transition: all .25s;
 }
 
 .ExpandingIcon i {
-    padding: 0.35rem 0.5rem;
-    margin: 0;
+    margin: 0 auto;
 
-    animation: intro-up .175s calc(calc(var(--index)*.125s) + 1s) backwards ease-out;
+    padding: 0.35rem 0;
+    animation: intro-up .175s calc(calc(var(--index)*.1s) + 1.5s) backwards ease-out;
 }
 
 .ExpandingIcon p {
+    opacity: 0;
     margin-top: 14px;
     text-align: center;
     width: 50%;
 }
 
-
 .ExpandingIcon:hover {
-    width: 8.5rem;
-    margin: 5px -18px;
-
-    color: var(--text);
+    margin: auto -24px;
+    width: 10rem;
+    min-height: 45px;
     background-color: var(--background-lightest);
+    color: var(--text);
 }
 
 .ExpandingIcon:hover i {
-    padding: 0.35rem 0.5rem;
-    margin-left: .2rem;
+    margin: 0 0 0 24px;
 }
 
-#IconLine{
+.ExpandingIcon:hover p {
     opacity: 1;
-    background-color: var(--text-muted);
-    animation: intro-up .2s .75s backwards ease-in;
+    display: inline;
+    margin: auto;
+    text-align: center;
+    width: 100%;
 }
 
 
 @keyframes intro-up {
-    from{
+    from {
         opacity: 0;
         transform: translateY(100%);
 
     }
-    to{
+
+    to {
         opacity: 1;
         transform: translateY(0);
 
     }
 }
 
-@keyframes spin {
-    to {
-        rotate: -360deg;
-    }
-}
 
 @media (max-width: 768px) {
-    .ExpandingIcon {
-        margin: 8px auto;
-        width: 38%;
+
+    .ExpandingIcon,
+    .ExpandingIcon:hover {
+        position: relative;
+        margin: 10px auto;
+        width: 10rem;
+        min-height: 45px;
         background-color: var(--background-lightest);
         color: var(--text);
     }
 
-    .ExpandingIcon:hover{
-        width: 38%;
-    }
 
-    .ExpandingIcon i {
-        animation:none;
-    }
-
+    .ExpandingIcon i,
     .ExpandingIcon:hover i {
-        padding: 0.35rem 0.5rem;
+        position: absolute;
+        margin: auto 4px;
+        padding: 8px 12px;
         margin-left: .2rem;
         animation: none;
     }
-}
 
+    .ExpandingIcon p,
+    .ExpandingIcon:hover p {
+        display: inline;
+        opacity: 1;
+        margin: auto 0 auto 24px;
+        text-align: center;
+        width: 100%;
+    }
+}
