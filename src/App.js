@@ -19,7 +19,7 @@ function CurrentSectionProvider({ children }) {
 function App() {
   return (
     <main className='container mx-auto my-0 p-0'>
-      <div className="App container-fluid d-flex flex-column flex-md-row position-relative " >
+      <div className="App container-fluid d-flex flex-column flex-md-row position-relative p-0 " >
         <CurrentSectionProvider>
 
           <DynamicContainer width=''>
@@ -82,7 +82,7 @@ function App() {
             </section>
           </DynamicContainer>
         </CurrentSectionProvider>
-        <figure id="AppBackground" className='container' />
+        <figure id="AppBackground" className='container m-0 p-0' />
       </div>
     </main>
   );
