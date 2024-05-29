@@ -17,11 +17,18 @@
     --font-green: #05DA84;
 
     --spotlight: #5ED1FF73;
-
 }
 
 .text-white{
     color: var(--text-bright)
+}
+
+.text{
+    color: var(--text);
+}
+
+.text-soft{
+    color: var(--text-soft);
 }
 
 .bg-cyan{
@@ -40,3 +47,12 @@
     background-color: #07aaa2 !important;
 }
 
+.text-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: #000; /* Black text color for high contrast */
+}
+
+.image-shadow {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the shadow as needed */
+    border-radius: 8px; /* Optional: add border radius for rounded corners */
+  }

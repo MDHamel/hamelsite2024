@@ -1,4 +1,5 @@
 @import './colors.css';
+
 @font-face {
     font-family: "Poppins";
     src: url("./Poppins-Regular.ttf");
@@ -107,23 +108,11 @@
 
 .ProjectBox video {
     object-fit: cover;
-    min-height: 168px;
+    min-height: 155px;
 }
 
 .ProjectImage {
     box-sizing: border-box !important;
-}
-
-.ProjectText {}
-
-@media (max-width: 768px) {
-
-    .ProjectLink,
-    .ProjectLink h5 {
-        width: 100%;
-        text-align: center;
-        margin-left: 0;
-    }
 }
 
 #content {
@@ -135,42 +124,17 @@
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.55);
 }
 
-@media (max-width: 768px) {
-    #content {
-        position: relative;
-        box-shadow: -1rem -1rem 3rem rgba(0, 0, 0, 0.33), 1rem 1rem 3rem rgba(0, 0, 0, 0.33);
-
-        width: 100%;
-        left: 0;
-    }
-}
-
 .DynamicContainer {
     position: fixed;
     min-width: 450px;
     padding: 0;
 }
 
-@media (max-width: 768px) {
-    .DynamicContainer {
-        position: relative;
-        min-width: 100%;
-        width: 100% !important;
-        padding: 0.75rem;
-        margin-top: 50px;
-        inset: 0 !important;
-        box-sizing: border-box;
-    }
-
-    .SectionBox {
-        padding: 0.75rem !important;
-    }
-}
-
 .SectionBox {
     color: var(--text-soft);
     padding: 1.5rem;
 }
+
 
 
 .SectionTitle {
@@ -277,8 +241,9 @@
     right: 0;
     margin: 0;
     z-index: 100;
+    overflow: hidden !important;
 
-    padding: 20px 0 15px 0;
+    padding: 15px 0 18px 0;
 
     backdrop-filter: blur(6px);
     background-color: var(--background-thrice-transparent);
@@ -415,8 +380,48 @@
     }
 }
 
+.ColorTab{
+    padding: 0;
+    width: 25%;
+    min-height: 100% !important;
+}
 
-@media (max-width: 768px) {
+/* Break point for ipad and below */
+@media (max-width: 1401px) {
+    #content {
+        position: relative;
+        box-shadow: -1rem -1rem 3rem rgba(0, 0, 0, 0.33), 1rem 1rem 3rem rgba(0, 0, 0, 0.33);
+
+        width: 100%;
+        left: 0;
+    }
+
+    .DynamicContainer {
+        position: relative;
+        min-width: 100%;
+        width: 100% !important;
+        padding: 0.75rem;
+        margin-top: 50px;
+        inset: 0 !important;
+        box-sizing: border-box;
+    }
+
+    .SectionBox {
+        padding: 0.75rem !important;
+    }
+
+    
+
+    #AppBackground {
+        position: fixed;
+        top: 0;
+        padding: 0;
+        right: 0;
+        min-width: 100vw;
+
+        min-height: 100vh;
+        z-index: -100;
+    }
 
     .ExpandingIcon,
     .ExpandingIcon:hover {
@@ -445,5 +450,26 @@
         margin: auto 0 auto 24px;
         text-align: center;
         width: 100%;
+    }
+}
+/* Phone screen  */
+
+@media (max-width: 769px) {
+
+    .SubSectionBox {
+        width: 100vw;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .SectionBox{
+        padding: 0 !important;
+    }
+
+    .ProjectLink,
+    .ProjectLink h5 {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
     }
 }

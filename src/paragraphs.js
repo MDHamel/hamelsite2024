@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, useRef } from 'react';
-import diplomaSVG from "./assets/diploma.webp";
 import ramblePNG from "./assets/ramble-rumble-preview.webp"
 import rambleGIF from "./assets/ramble-rumble-preview.webm"
 import focusPNG from "./assets/focus-flow.webp";
@@ -8,6 +7,8 @@ import streamPNG from "./assets/shadow-stream.webp";
 import streamGIF from "./assets/shadow-stream.webm";
 import snipPNG from "./assets/snip-clip-preview.webp";
 import snipGIF from "./assets/snip-clip.webm";
+import personaP from "./assets/persona_answers_preview.webp";
+import personaM from "./assets/persona_answers_preview.webm";
 
 function SubSectionBox({ children }) {
     const [isSelected, setIsSelected] = useState(false)
@@ -81,20 +82,29 @@ export function AboutMe() {
     )
 }
 
+function ColorTab({ children, className }) {
+
+    return (
+        <div className={`ColorTab ${className} d-flex justify-content-center d-flex flex-column text-center fw-bold p-2 p-md-0`}>
+            {children}
+        </div>
+    )
+}
+
 export function Education() {
     return (
         <article>
             <SelectedEventProvider>
                 <SubSectionBox>
                     <div className="d-flex position-relative">
-                        <div className='bg-cyan d-flex justify-content-center d-flex flex-column text-center fw-bold w-25' style={{ minHeight: "100%" }}>
-                            <div className='px-1 text-white'>
+                        <ColorTab className='bg-cyan text-shadow' >
+                            <div className='px-1 text-white '>
                                 <p className='m-0 p-0'>A.S.</p>
                                 <p className='m-0 p-0'>Computer</p>
                                 <p className='m-0 p-0'>Science</p>
                             </div>
-                            <img alt="A diploma." src={diplomaSVG} width={"40%"} className='mx-auto mt-2 px-md-2' />
-                        </div>
+                            <i class="bi bi-mortarboard-fill text-light mx-auto my-3 h1 text-shadow"></i>
+                        </ColorTab>
                         <div className='my-3 mx-4' style={{ width: "85%" }}>
                             <h5 className='fw-bold underline text-center mt-3'>Las Positas Community College</h5>
                             <hr className='w-75 text-light text-center my-3 mx-auto' />
@@ -119,19 +129,19 @@ export function Education() {
                     </div>
                 </SubSectionBox>
                 <SubSectionBox>
-                    <div className="d-flex position-relative">
-                        <div className='bg-blue d-flex justify-content-center d-flex flex-column text-center fw-bold w-25' style={{ minHeight: "100%", }}>
+                    <div className="d-flex position-relative text-shadow">
+                        <ColorTab className='bg-blue'>
                             <div className='px-1 text-white'>
                                 <p className='m-0 p-0'>B.S.</p>
                                 <p className='m-0 p-0'>Computer</p>
                                 <p className='m-0 p-0'>Science</p>
                             </div>
-                            <img alt="A diploma." src={diplomaSVG} width={"40%"} className='mx-auto mt-2 px-md-2' />
-                        </div>
+                            <i class="bi bi-mortarboard-fill text-light mx-auto my-3 h1 text-shadow"></i>
+                        </ColorTab>
                         <div className='my-3 mx-4' style={{ width: "82%" }}>
                             <h5 className='fw-bold underline text-center mt-3'>California State University East Bay</h5>
                             <hr className='w-75 text-light text-center my-3 mx-auto' />
-                            <p className='my-4'>
+                            <p className='my-4 text-soft'>
                                 During my time at CSU East Bay,
                                 I was able to broaden my breadth of knowledge and learn new key computer science concepts.
                                 Some notable courses include:
@@ -139,7 +149,7 @@ export function Education() {
 
                             <span className='ms-2'><Highlight>Software Engineering</Highlight></span>
                             <div className='d-flex flex-wrap w-100 mb-4 mt-2'>
-                                <TaggedText>Collaborative Coding</TaggedText> <TaggedText>Unit Testing</TaggedText> <TaggedText>Best Practices</TaggedText>
+                                <TaggedText>Co-op Coding</TaggedText> <TaggedText>Unit Testing</TaggedText> <TaggedText>Best Practices</TaggedText>
                             </div>
 
                             <span className='ms-2'><Highlight>Networking</Highlight></span>
@@ -187,14 +197,14 @@ export function Experience() {
             <SelectedEventProvider>
                 <SubSectionBox>
                     <div className="d-flex position-relative">
-                        <div className='bg-green d-flex justify-content-center d-flex flex-column text-center fw-bold w-25' style={{ minHeight: "100%" }}>
-                            <div className='px-1 text-white'>
+                        <ColorTab className='bg-green' >
+                            <div className='px-1 text-white text-shadow'>
                                 <p className='m-0 p-0'>Nov. 2016</p>
                                 <p className="m-1">to</p>
                                 <p className='m-0 p-0'>July 2021</p>
                             </div>
-                            <i className="bi bi-journal-code text-light mx-auto my-3 h1" ></i>
-                        </div>
+                            <i className="bi bi-journal-code text-light mx-auto my-3 h1 text-shadow" ></i>
+                        </ColorTab>
                         <div className='my-3 mx-4' style={{ width: "85%" }}>
                             <h5 className='fw-bold underline text-center mt-3'>Code Coach <span className="fw-normal">at</span> <b>theCoderSchool</b></h5>
                             <hr className='w-75 text-light text-center my-3 mx-auto' />
@@ -215,16 +225,15 @@ export function Experience() {
                     </div>
                 </SubSectionBox>
                 <SubSectionBox>
-                    <div className="d-flex position-relative">
-                        <div className='bg-turq d-flex justify-content-center d-flex flex-column text-center fw-bold w-25' style={{ minHeight: "100%" }}>
+                    <div className="d-flex position-relative ">
+                        <ColorTab className='bg-turq d-flex justify-content-center d-flex flex-column text-center fw-bold w-25 text-shadow' style={{ minHeight: "100%" }}>
                             <div className='px-1 text-white'>
                                 <p className='m-0 p-0'>July 2021 </p>
                                 <p className="m-1">to</p>
                                 <p className='m-0 p-0'>Now</p>
-
                             </div>
-                            <i className="bi bi-laptop text-light mx-auto my-3 h1" ></i>
-                        </div>
+                            <i className="bi bi-laptop text-light mx-auto my-3 h1 text-shadow" ></i>
+                        </ColorTab>
                         <div className='my-3 mx-4' style={{ width: "85%" }}>
                             <h5 className='fw-bold underline text-center mt-3'>Freelance Web Developer</h5>
                             <hr className='w-75 text-light text-center my-3 mx-auto' />
@@ -257,7 +266,7 @@ function ProjectBox({ title, href, tags, png_src, gif_src, children }) {
     return (
         <div className='ProjectBox px-3'
             onMouseOver={event => { vid.current.play().catch((e) => { }) }}
-            onMouseOut={event => { vid.current.pause();}}
+            onMouseOut={event => { vid.current.pause(); }}
 
         >
             <div className='py-3 ps-4 pe-2 my-auto w-100 ' >
@@ -273,7 +282,7 @@ function ProjectBox({ title, href, tags, png_src, gif_src, children }) {
                         </video>
                     </div>
                     <div className='col-md-7 col-12 mx-0 mx-md-4 mb-3 mb-md-0 ProjectText'>
-                        <a target="_blank" rel="noreferrer" className="ProjectLink" href={href}><h5 className="fw-bolder my-2 mb-md-3 mt-md-0" >{title}<i className="bi-link-45deg ms-1" /></h5></a>
+                        <a target="_blank" rel="noreferrer" className="ProjectLink text-shadow" href={href}><h5 className="fw-bolder my-2 mb-md-3 mt-md-0" >{title}<i className="bi-link-45deg ms-1" /></h5></a>
                         {children}
                     </div>
                 </div>
@@ -293,28 +302,37 @@ export function Projects() {
             <SelectedEventProvider>
                 <SubSectionBox>
                     <ProjectBox title="Ramble Rumble" tags={["HTML", "CSS", "JavaScript", "React.js", "Bootstrap"]} href="https://ramblerumble.matthewhamel.dev/" png_src={ramblePNG} gif_src={rambleGIF}>
-                        <p className='m-0'>A Wordle-inspired letter tile game with no limits on how many times you can play. Features two game modes, Timed Trial and High Score, for a challenging or relaxed gameplay experience.</p>
+                        <p className='m-0'>A Wordle-inspired letter tile game with no limits on how many times you can play. Features two game modes,
+                            Timed Trial and High Score, for a challenging or relaxed gameplay experience.</p>
                     </ProjectBox>
                 </SubSectionBox>
                 <SubSectionBox>
                     <ProjectBox title="Focus Flow" tags={["HTML", "CSS", "JavaScript", "React.js", "Bootstrap"]} href="https://focus.matthewhamel.dev/" png_src={focusPNG} gif_src={focusGIF}>
-                        <p className='m-0'>A Pomodoro Technique based timer designed to enhance productivity and prevent burn-out by alerting the user when to take breaks. Timer features custom times and a wide array of themes to choose from.</p>
+                        <p className='m-0'>A Pomodoro Technique-based timer designed to enhance productivity and prevent burn-out by alerting the user
+                            when to take breaks. The timer features custom times and a wide array of themes to choose from.</p>
+                    </ProjectBox>
+                </SubSectionBox>
+                <SubSectionBox>
+                    <ProjectBox title="Persona 5 Answers" tags={["HTML", "CSS", "JavaScript", "React.js", "Bootstrap"]} href="https://persona.matthewhamel.dev/" png_src={personaP} gif_src={personaM}>
+                        <p className='m-0'>A comprehensive guide for the acclaimed game Persona 5 Royal, meticulously crafted to reflect the game's distinctive aesthetics. This guide assists players in answering in-game pop-up questions and saves where you left off via cookies.</p>
                     </ProjectBox>
                 </SubSectionBox>
                 <SubSectionBox>
                     <ProjectBox title="Shadow Stream" tags={["C#", "OpenCV", "Windows Forms"]} href="https://github.com/MDHamel/ShadowStream" png_src={streamPNG} gif_src={streamGIF}>
-                        <p className='m-0'>A light-weight capture card streaming application. Users can stream video and audio from an external capture card straight to their computer. Supports 1080p at 30fps or 720p at 30/60 fps with minimal audio lag.</p>
+                        <p className='m-0'>A lightweight capture card streaming application. Users can stream video and audio straight to their computer
+                            from an external capture card. Supports 1080p at 30fps or 720p at 30/60 fps with minimal audio lag.</p>
                     </ProjectBox>
                 </SubSectionBox>
                 <SubSectionBox>
                     <ProjectBox title="Snip Clip" tags={["C#", "Game Bar SDK", "UWP"]} href="https://github.com/MDHamel/SnipClip" png_src={snipPNG} gif_src={snipGIF}>
-                        <p className='m-0'>A simple, light-weight video editing tool integrated into the Windows Game Bar. Easily crop clips and save videos anywhere on your PC. </p>
+                        <p className='m-0'>A simple, lightweight video editing tool integrated into the Windows Game Bar. Easily crop clips and save videos
+                            anywhere on your PC.</p>
                     </ProjectBox>
                 </SubSectionBox>
             </SelectedEventProvider>
 
             <div className="d-grid mx-md-5 mx-0 mb-2 p-0 ">
-                <button className="btn btn-dark border border-2 py-2 fw-bold col-12 mx-auto mt-2" type="button" onClick={() => { window.open("https://github.com/MDHamel?tab=repositories") }}>
+                <button className="btn btn-dark border border-2 py-2 fw-bold col-11 col-md-8 col-xl-12 mx-auto mt-2" type="button" onClick={() => { window.open("https://github.com/MDHamel?tab=repositories") }}>
                     <i className="bi bi-github" />&nbsp;
                     Find More of My Projects on GitHub
                 </button>

@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect, useRef } from 'react';
 import './App.css';
 import { AboutMe, Education, Experience, Footer, Projects } from './paragraphs';
-import resumepdf from "./assets/WD_Matthew_Hamel_Resume_2024.pdf"
+import resumepdf from "./assets/Matthew_Hamel_Resume_2024.pdf"
 
 
 const currentSectionContext = createContext();
@@ -18,12 +18,12 @@ function CurrentSectionProvider({ children }) {
 
 function App() {
   return (
-    <main className='container mx-auto my-0 p-0'>
-      <div className="App container-fluid d-flex flex-column flex-md-row position-relative p-0 " >
+    <main className='container-fluid container-xxl mx-auto my-0 p-0'>
+      <div className="App d-flex flex-column flex-xxl-row position-relative p-0 " >
         <CurrentSectionProvider>
 
           <DynamicContainer width=''>
-            <div className='fluid-container ps-md-5 mt-1 mt-md-5 pt-0 w-100 mb-5'>
+            <div className='fluid-container ps-xl-5 mt-1 mt-xl-5 pt-0 w-100 mb-5'>
               <div className='d-flex flex-column'>
                 <section className='my-4'>
                   <div className='overflow overflow-hidden  pb-2'>
@@ -35,13 +35,13 @@ function App() {
                   </div>
                 </section >
                 <section className='my-4'>
-                  <p className='row my-4 fs-6'>
-                    <b className='text-light col-md-4 col-4'><i className="bi bi-geo-alt-fill pe-2"></i>Location</b>
-                    <span className='col-md-8 col-8'>San Francisco Bay Area, California</span>
+                  <p className='row my-4 fs-6 text-center'>
+                    <b className='text-light col-xl-4 col-4 ps-4 ps-lg-0'><i className="bi bi-geo-alt-fill pe-2"></i>Location</b>
+                    <span className='col-xl-8 col-8  '>San Francisco Bay Area, California</span>
                   </p >
-                  <p className='row my-4 fs-6'>
-                    <b className='text-light col-md-4 col-4'><i className="bi bi-envelope-fill pe-2"></i>E-mail</b>
-                    <span className='col-md-8 col-8'>matt@matthewhamel.dev</span>
+                  <p className='row my-4 fs-6 text-center'>
+                    <b className='text-light col-xl-4 col-4 ps-2 ps-lg-0'><i className="bi bi-envelope-fill pe-2"></i>E-mail</b>
+                    <span className='col-xl-8 col-8'>matt@matthewhamel.dev</span>
                   </p >
                 </section>
               </div>
@@ -51,7 +51,7 @@ function App() {
 
           <div id="content" className='' >
             <div className='w-100'>
-              <Menu />
+              <NavBar />
 
               <SectionBox title="About Me">
                 <AboutMe />
@@ -70,8 +70,8 @@ function App() {
           </div>
 
           <DynamicContainer width='' bottom='3vh'>
-            <section className='mx-0 ps-md-5 mb-3 mb-md-0'>
-              <h4 className='d-md-none mx-auto text-center my-4 text-light'>Links</h4>
+            <section className='mx-0 ps-xl-5 mb-3 mb-xl-0'>
+              <h4 className='d-xl-none mx-auto text-center my-4 text-light'>Links</h4>
               <div className='Links d-flex flex-wrap justify-content-between'>
                 <ExpandingIcon icon="bi-file-earmark-pdf-fill" text="Résumé" url={resumepdf} index="4" />
                 <ExpandingIcon icon="bi-envelope-at-fill" text="Email" url="mailto:matt@matthewhamel.dev" index="3" />
@@ -87,8 +87,6 @@ function App() {
     </main>
   );
 }
-
-
 
 export const useIntersection = (element, rootMargin) => {
   const [isVisible, setState] = useState(false);
@@ -131,19 +129,17 @@ function SectionBox({ title, children }) {
   )
 }
 
-function Menu() {
+function NavBar() {
   const { currentSection } = useContext(currentSectionContext);
 
   const sections = ["About Me", "Education", "Experience", "Projects"]
 
   return (
-    <nav id="menu" className='text-light list-unstyled user-select-none d-none d-md-flex justify-content-evenly '>
+    <nav id="menu" className='text-light list-unstyled user-select-none d-none d-lg-flex justify-content-evenly '>
       {sections.map((val, i) => { return (<a key={i} className='text-decoration-none' href={`#${val.replace(" ", "")}`} id={currentSection === val ? "selected" : ""} style={{ "--index": i }}>{val}</a>) })}
     </nav>
   )
 }
-
-
 
 function ExpandingIcon({ icon, text, url, index }) {
 
