@@ -132,27 +132,34 @@
 
 .SectionBox {
     color: var(--text-soft);
-    padding: 1.5rem;
+    
+    position: relative;
+    padding-top: 75px;
+    top: -75px;
 }
 
 
-
 .SectionTitle {
+    position: relative;
     text-align: center;
-    color: var(--text);
+    color: var(--text-bright) !important;
+    padding: 15px 1px;
+    margin-top: 1px;
 }
 
 .SectionTitle::after {
     content: "";
 
-    display: block;
-    margin: 15px 0 25px 0;
+    position: absolute;
+    left:0;
+    right: 0;
+    bottom: 5px;
 
-    width: 100%;
+    width: 88%;
     height: 2px;
+    margin: auto;
 
-    background-color: var(--text-muted);
-
+    background-color: var(--text-soft);
 }
 
 .SubSectionBox {
@@ -192,7 +199,7 @@
 }
 
 .highlighted-text {
-    cursor: pointer;
+    cursor:default;
     display: inline-block;
 }
 
@@ -205,20 +212,8 @@
 
 .highlighted-text:hover .highlight {
     color: var(--font-green);
-    animation: hop .15s calc(var(--index)*0.025s) forwards linear;
 }
 
-@keyframes hop {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
-}
 
 @media (max-width: 768px) {
     .highlight {
@@ -230,13 +225,10 @@
     }
 }
 
-#AboutMe {
-    padding-top: 85px !important;
-}
-
 #menu {
     position: sticky;
     width: 100%;
+    height: 75px;
     top: 0;
     right: 0;
     margin: 0;
@@ -408,9 +400,8 @@
 
     .SectionBox {
         padding: 0.75rem !important;
+        top: 0px;
     }
-
-    
 
     #AppBackground {
         position: fixed;
@@ -463,8 +454,13 @@
     }
 
     .SectionBox{
-        padding: 0 !important;
+        padding: 25px 0 !important;
+        top: 0px;
     }
+
+    .SectionTitle::after {
+        width: 95%;
+      }
 
     .ProjectLink,
     .ProjectLink h5 {

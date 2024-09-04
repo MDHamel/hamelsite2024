@@ -39,7 +39,7 @@ function SelectedEventProvider({ children }) {
 }
 
 
-function Highlight({ children }) {
+export function Highlight({ children }) {
     const highlighter = (letter, i) => { return letter === " " ? <span key={i}> </span> : <span key={i} className='highlight' style={{ "--index": i }}>{letter}</span> };
     return (
         <span className='highlighted-text'>
@@ -51,34 +51,6 @@ function Highlight({ children }) {
 function TaggedText({ children }) {
     return (
         <span className='TaggedText rounded-4 m-1 px-3 py-1 w-auto small fw-bold'>{children}</span>
-    )
-}
-
-
-
-export function AboutMe() {
-    return (
-        <article className='mx-md-5'>
-            <p className='mx-4 mx-md-5'>
-                Technology has always captivated me.
-                In high school, I joined an engineering curriculum that followed me from sophomore year to graduation, and it was here where I was exposed to coding.
-                Over one summer, I taught myself <Highlight>Java</Highlight> and started making Minecraft Mods.
-                In my junior year, I joined the robotics club with friends, learned <Highlight>Python</Highlight>, and competed with other school in robotics competitions.
-            </p>
-            <p className='mx-4 mx-md-5'>
-                After graduating high school, I pursued a degree in <Highlight>Computer Science</Highlight>.
-                At the same time, I started working at <Highlight>theCoderSchool</Highlight> as a Code Coach (a coding tutor).
-                I taught children aged 6-17 in Java, Python, C#, C++, Unity Game Development, Web Development, and more.
-            </p>
-            <p className='mx-4 mx-md-5'>
-                Today, I primarily focus on my <Highlight>Freelance Web Developer</Highlight> career and develop other applications during my free time.
-                From my video streaming application to my replayable Wordle clone, I am constantly looking for new personal projects to put my soul into.
-            </p>
-            <p className='mx-4 mx-md-5'>
-                When I'm not toiling away on a project, you can find me <Highlight>playing games</Highlight> online with friends (or solo), <Highlight>cooking/baking</Highlight> delicious food, playing with my beloved dog <Highlight>Emma</Highlight>, or hanging out with my <Highlight>family</Highlight>.
-            </p>
-        </article>
-
     )
 }
 
@@ -95,39 +67,6 @@ export function Education() {
     return (
         <article>
             <SelectedEventProvider>
-                <SubSectionBox>
-                    <div className="d-flex position-relative">
-                        <ColorTab className='bg-cyan text-shadow' >
-                            <div className='px-1 text-white '>
-                                <p className='m-0 p-0'>A.S.</p>
-                                <p className='m-0 p-0'>Computer</p>
-                                <p className='m-0 p-0'>Science</p>
-                            </div>
-                            <i class="bi bi-mortarboard-fill text-light mx-auto my-3 h1 text-shadow"></i>
-                        </ColorTab>
-                        <div className='my-3 mx-4' style={{ width: "85%" }}>
-                            <h5 className='fw-bold underline text-center mt-3'>Las Positas Community College</h5>
-                            <hr className='w-75 text-light text-center my-3 mx-auto' />
-
-                            <p >
-                                After graduating highschool, I enrolled at Las Positas Community College and worked towards transferring to a four year university for my B.S.
-                                While here, I also formed a <Highlight>Programming Club</Highlight> with some friends and was named Vice President.
-                                I took courses that covered concepts such as <Highlight>Computer Science</Highlight>, <Highlight>Physics</Highlight>, <Highlight>2D and 3D Calculus</Highlight>, and more general education classes.
-                                After meeting the required classes and taking a few extra, I was able to transfer and receive A.S. in Computer Science.
-                            </p>
-                            <div className='d-flex flex-wrap w-100'>
-                                <TaggedText>C++</TaggedText>
-                                <TaggedText>NASM</TaggedText>
-                                <TaggedText>MASM</TaggedText>
-                                <TaggedText>Linux</TaggedText>
-                                <TaggedText>OOP</TaggedText>
-                                <TaggedText>Physics</TaggedText>
-                                <TaggedText>Linear Algebra</TaggedText>
-                                <TaggedText>2D/3D Calculus</TaggedText>
-                            </div>
-                        </div>
-                    </div>
-                </SubSectionBox>
                 <SubSectionBox>
                     <div className="d-flex position-relative text-shadow">
                         <ColorTab className='bg-blue'>
@@ -180,9 +119,42 @@ export function Education() {
 
                             <span className='ms-2'><Highlight>Analysis of Algorithms</Highlight></span>
                             <div className='d-flex flex-wrap w-100 mb-4 mt-2'>
-                                <TaggedText>Optimization</TaggedText> <TaggedText>Time Complexity</TaggedText> <TaggedText>Greedy Algorithm</TaggedText> <TaggedText>Divide and Conquer</TaggedText>
+                                <TaggedText>Optimization</TaggedText> <TaggedText>Time Complexity</TaggedText> <TaggedText>Big O</TaggedText> <TaggedText>Greedy Algorithm</TaggedText> <TaggedText>Divide and Conquer</TaggedText> 
                             </div>
 
+                        </div>
+                    </div>
+                </SubSectionBox>
+                <SubSectionBox>
+                    <div className="d-flex position-relative">
+                        <ColorTab className='bg-cyan text-shadow' >
+                            <div className='px-1 text-white '>
+                                <p className='m-0 p-0'>A.S.</p>
+                                <p className='m-0 p-0'>Computer</p>
+                                <p className='m-0 p-0'>Science</p>
+                            </div>
+                            <i class="bi bi-mortarboard-fill text-light mx-auto my-3 h1 text-shadow"></i>
+                        </ColorTab>
+                        <div className='my-3 mx-4' style={{ width: "85%" }}>
+                            <h5 className='fw-bold underline text-center mt-3'>Las Positas Community College</h5>
+                            <hr className='w-75 text-light text-center my-3 mx-auto' />
+
+                            <p >
+                                After graduating highschool, I enrolled at Las Positas Community College and worked towards transferring to a four year university for my B.S.
+                                While here, I also formed a <Highlight>Programming Club</Highlight> with some friends and was named Vice President.
+                                I took courses that covered concepts such as <Highlight>Computer Science</Highlight>, <Highlight>Physics</Highlight>, <Highlight>2D and 3D Calculus</Highlight>, and more general education classes.
+                                After meeting the required classes and taking a few extra, I was able to transfer and receive A.S. in Computer Science.
+                            </p>
+                            <div className='d-flex flex-wrap w-100'>
+                                <TaggedText>C++</TaggedText>
+                                <TaggedText>NASM</TaggedText>
+                                <TaggedText>MASM</TaggedText>
+                                <TaggedText>Linux</TaggedText>
+                                <TaggedText>OOP</TaggedText>
+                                <TaggedText>Physics</TaggedText>
+                                <TaggedText>Linear Algebra</TaggedText>
+                                <TaggedText>2D/3D Calculus</TaggedText>
+                            </div>
                         </div>
                     </div>
                 </SubSectionBox>
@@ -195,35 +167,6 @@ export function Experience() {
     return (
         <article>
             <SelectedEventProvider>
-                <SubSectionBox>
-                    <div className="d-flex position-relative">
-                        <ColorTab className='bg-green' >
-                            <div className='px-1 text-white text-shadow'>
-                                <p className='m-0 p-0'>Nov. 2016</p>
-                                <p className="m-1">to</p>
-                                <p className='m-0 p-0'>July 2021</p>
-                            </div>
-                            <i className="bi bi-journal-code text-light mx-auto my-3 h1 text-shadow" ></i>
-                        </ColorTab>
-                        <div className='my-3 mx-4' style={{ width: "85%" }}>
-                            <h5 className='fw-bold underline text-center mt-3'>Code Coach <span className="fw-normal">at</span> <b>theCoderSchool</b></h5>
-                            <hr className='w-75 text-light text-center my-3 mx-auto' />
-                            <p >
-                                During my tenure at <Highlight>theCoderSchool</Highlight>, I taught children aged 6-16 how to code through projects or helped them with homework.
-                                I tried to make each student's experience unique and exciting so that they would become <Highlight>passionate</Highlight> about their projects.
-                                During the summer, I was also responsible for <Highlight>organizing</Highlight> and <Highlight>instructing</Highlight> a large number of students for <Highlight>Summer Camps</Highlight> that would meet for around 5-6 hours a day for one week.
-                                I often took <Highlight>initiative</Highlight> and would sign up to teach multiple camps along with my usual workload.
-                                Projects ranged from beginners <Highlight>learning the basics</Highlight> to more advanced projects including <Highlight>Web Development</Highlight> and <Highlight>Game Development</Highlight>.
-                            </p>
-                            <div className='d-flex flex-wrap w-100'>
-                                <TaggedText>C++</TaggedText> <TaggedText>C#</TaggedText><TaggedText>Python</TaggedText><TaggedText>Java</TaggedText> <TaggedText>JavaScript</TaggedText>
-                                <TaggedText>HTML</TaggedText> <TaggedText>CSS</TaggedText> <TaggedText>Android Studio</TaggedText> <TaggedText>React.js</TaggedText> <TaggedText>Unity Game Engine</TaggedText> <TaggedText>Web Development</TaggedText>
-                                <TaggedText>Networking</TaggedText>
-
-                            </div>
-                        </div>
-                    </div>
-                </SubSectionBox>
                 <SubSectionBox>
                     <div className="d-flex position-relative ">
                         <ColorTab className='bg-turq d-flex justify-content-center d-flex flex-column text-center fw-bold w-25 text-shadow' style={{ minHeight: "100%" }}>
@@ -256,6 +199,36 @@ export function Experience() {
                         </div>
                     </div>
                 </SubSectionBox>
+                <SubSectionBox>
+                    <div className="d-flex position-relative">
+                        <ColorTab className='bg-green' >
+                            <div className='px-1 text-white text-shadow'>
+                                <p className='m-0 p-0'>Nov. 2016</p>
+                                <p className="m-1">to</p>
+                                <p className='m-0 p-0'>July 2021</p>
+                            </div>
+                            <i className="bi bi-journal-code text-light mx-auto my-3 h1 text-shadow" ></i>
+                        </ColorTab>
+                        <div className='my-3 mx-4' style={{ width: "85%" }}>
+                            <h5 className='fw-bold underline text-center mt-3'>Code Coach <span className="fw-normal">at</span> <b>theCoderSchool</b></h5>
+                            <hr className='w-75 text-light text-center my-3 mx-auto' />
+                            <p >
+                                During my tenure at <Highlight>theCoderSchool</Highlight>, I taught children aged 6-16 how to code through projects or helped them with homework.
+                                I tried to make each student's experience unique and exciting so that they would become <Highlight>passionate</Highlight> about their projects.
+                                During the summer, I was also responsible for <Highlight>organizing</Highlight> and <Highlight>instructing</Highlight> a large number of students for <Highlight>Summer Camps</Highlight> that would meet for around 5-6 hours a day for one week.
+                                I often took <Highlight>initiative</Highlight> and would sign up to teach multiple camps along with my usual workload.
+                                Projects ranged from beginners <Highlight>learning the basics</Highlight> to more advanced projects including <Highlight>Web Development</Highlight> and <Highlight>Game Development</Highlight>.
+                            </p>
+                            <div className='d-flex flex-wrap w-100'>
+                                <TaggedText>C++</TaggedText> <TaggedText>C#</TaggedText><TaggedText>Python</TaggedText><TaggedText>Java</TaggedText> <TaggedText>JavaScript</TaggedText>
+                                <TaggedText>HTML</TaggedText> <TaggedText>CSS</TaggedText> <TaggedText>Android Studio</TaggedText> <TaggedText>React.js</TaggedText> <TaggedText>Unity Game Engine</TaggedText> <TaggedText>Web Development</TaggedText>
+                                <TaggedText>Networking</TaggedText>
+
+                            </div>
+                        </div>
+                    </div>
+                </SubSectionBox>
+
             </SelectedEventProvider>
         </article>
     )
@@ -345,7 +318,7 @@ export function Footer() {
     return (
         <footer className='col-12 col-md-9 mx-auto my-5 px-2 px-md-1 text-center'>
             <small>
-                This site was developed by me, <Highlight>Matthew Hamel</Highlight>, using a blend of <Highlight>HTML</Highlight>, <Highlight>CSS</Highlight>, <Highlight>React.js</Highlight>, and <Highlight>Bootstrap</Highlight>.&nbsp;
+                This site was developed by me, <Highlight>Matthew Hamel</Highlight>, using a blend of <Highlight>HTML</Highlight>, <Highlight>CSS</Highlight>, <Highlight>React.js</Highlight>, <Highlight>Bootstrap</Highlight>, and <Highlight>Webpack</Highlight>.&nbsp;
 
                 Check out the &nbsp;
                 <a className='link-underline-light text-light' href='https://github.com/MDHamel/hamelsite2024' target='_blank' rel="noreferrer">code on GitHub</a>.

@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, useRef } from 'react';
 import './App.css';
-import { AboutMe, Education, Experience, Footer, Projects } from './paragraphs';
+import { AboutMe, Education, Experience, Footer, Projects, Highlight } from './paragraphs';
 import resumepdf from "./assets/Matthew_Hamel_Resume_2024.pdf"
 
 
@@ -23,26 +23,37 @@ function App() {
         <CurrentSectionProvider>
 
           <DynamicContainer width=''>
-            <div className='fluid-container ps-xl-5 mt-1 mt-xl-5 pt-0 w-100 mb-5'>
-              <div className='d-flex flex-column'>
+            <div className='fluid-container ps-xl-5 mt-1 mt-xl-5 pt-0 w-100 mb-5 position-relative h-100'>
+              <div className=''>
                 <section className='my-4'>
                   <div className='overflow overflow-hidden  pb-2'>
-                    <p id="Name"  className='display-5 text-light text-center overflow-hidden m-0'>Matthew Hamel</p>
+                    <p id="Name" className='display-5 text-light text-center overflow-hidden m-0'>Matthew Hamel</p>
                   </div>
                   <hr id="NameDivider" className='w-100 text-center border-2' />
                   <div className='overflow-hidden'>
-                    <p id="JobTitle" className='display-6 fs-4 text-light text-center pt-3'>Web and Software Developer</p>
+                    <p id="JobTitle" className='display-6 fs-5 text-light text-center pt-3'>Web Developer and Software Engineer</p>
                   </div>
                 </section >
-                <section className='my-4'>
-                  <p className='row my-4 fs-6 text-center'>
-                    <b className='text-light col-xl-4 col-4 ps-4 ps-lg-0'><i className="bi bi-geo-alt-fill pe-2"></i>Location</b>
-                    <span className='col-xl-8 col-8  '>San Francisco Bay Area, California</span>
+                <section className=''>
+                  <p className='row fs-6 ms-lg-2 text-center text-lg-start'>
+                    <b className='text-light col-xl-4 col-4 ps-4 ps-lg-0'><i className="bi bi-geo-alt-fill me-3"></i>Location:</b>
+                    <span className='col-xl-8 col-8'>Silicon Valley, California</span>
                   </p >
-                  <p className='row my-4 fs-6 text-center'>
-                    <b className='text-light col-xl-4 col-4 ps-2 ps-lg-0'><i className="bi bi-envelope-fill pe-2"></i>E-mail</b>
+                  <p className='row fs-6 ms-lg-2 text-center text-lg-start'>
+                    <b className='text-light col-xl-4 col-4 ps-2 ps-lg-0'><i className="bi bi-envelope-fill me-3"></i>E-mail:</b>
                     <span className='col-xl-8 col-8'>matt@matthewhamel.dev</span>
                   </p >
+                  <p className='ms-lg-2 text-lg-start p-3 p-lg-0'>
+                    <b className='text-light '><i class="bi bi-person-circle me-3"></i>About Me:</b> <br className='mb-3'/>
+                    <span className=''>
+                      I started programming as a part of my <Highlight>Engineering Coursework</Highlight> and later programmed for our <Highlight>Robotics Team</Highlight>. I even taught myself <Highlight>Java</Highlight> over the summer going into my Junior year.
+                      <br/><br/>
+                      After highschool, I perused my passion and started working towards a degree in <Highlight>Computer Science</Highlight>. At <Highlight>Las Positas</Highlight>, I gained a foundation for <Highlight>OOP</Highlight> that I expanded on when I transferred to <Highlight>Cal State East Bay</Highlight>. 
+                      At the same time, I was mentoring kids at <Highlight>theCoderSchool</Highlight>, teaching them the basics and more advanced topics in coding.
+                      <br/><br/>
+                      Following my graduation from university, I started doing <Highlight>Freelance Web Development</Highlight> and am currently looking for new opportunities to expand my skill set and knowledge.
+                    </span>
+                  </p>
                 </section>
               </div>
             </div>
@@ -52,24 +63,21 @@ function App() {
           <div id="content" className='' >
             <div className='w-100'>
               <NavBar />
-
-              <SectionBox title="About Me">
-                <AboutMe />
-              </SectionBox>
-              <SectionBox title="Education">
-                <Education />
+              <SectionBox title="Projects">
+                <Projects />
               </SectionBox>
               <SectionBox title="Experience">
                 <Experience />
               </SectionBox>
-              <SectionBox title="Projects">
-                <Projects />
+              <SectionBox title="Education">
+                <Education />
               </SectionBox>
+
               <Footer />
             </div>
           </div>
 
-          <DynamicContainer width='' bottom='3vh'>
+          <DynamicContainer width='' bottom='8px'>
             <section className='mx-0 ps-xl-5 mb-3 mb-xl-0'>
               <h4 className='d-xl-none mx-auto text-center my-4 text-light'>Links</h4>
               <div className='Links d-flex flex-wrap justify-content-between'>
@@ -107,7 +115,7 @@ export const useIntersection = (element, rootMargin) => {
   return isVisible;
 };
 
-function SectionBox({ title, children }) {
+function SectionBox({ title, children, topOffset }) {
 
   const triggerRef = useRef(null);
   const isVisible = useIntersection(triggerRef, "-49%");
@@ -122,8 +130,8 @@ function SectionBox({ title, children }) {
 
 
   return (
-    <section id={title.replace(" ", "")} className='SectionBox' style={{ paddingTop: '75px' }} ref={triggerRef} >
-      <p className="SectionTitle h2 fw-bold d-block d-sm-none" >{title}</p>
+    <section id={title.replace(" ", "")} className='SectionBox ' ref={triggerRef}>
+      <p className="SectionTitle h2 fw-bold d-block mb-3" >{title}</p>
       {children}
     </section>
   )
@@ -132,7 +140,7 @@ function SectionBox({ title, children }) {
 function NavBar() {
   const { currentSection } = useContext(currentSectionContext);
 
-  const sections = ["About Me", "Education", "Experience", "Projects"]
+  const sections = ["Projects", "Experience", "Education"]
 
   return (
     <nav id="menu" className='text-light list-unstyled user-select-none d-none d-lg-flex justify-content-evenly '>
@@ -154,7 +162,7 @@ function ExpandingIcon({ icon, text, url, index }) {
 function DynamicContainer({ top = "auto", left = "auto", right = "auto", bottom = "auto", width = "45%", children }) {
 
   return (
-    <div className='DynamicContainer' style={{ top: top, left: left, right: right, bottom: bottom, width: width }}>
+    <div className='DynamicContainer' style={{ top: top, left: left, right: right, bottom: bottom, width: width, maxWidth: "18.5vw" }}>
       {children}
     </div>
   );
