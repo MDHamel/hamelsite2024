@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, useRef } from 'react';
 import './App.css';
-import { AboutMe, Education, Experience, Footer, Projects, Highlight } from './paragraphs';
+import { Education, Experience, Footer, Projects, Highlight } from './paragraphs';
 import resumepdf from "./assets/Matthew_Hamel_Resume_2024.pdf"
 
 
@@ -27,33 +27,34 @@ function App() {
               <div className=''>
                 <section className='my-4'>
                   <div className='overflow overflow-hidden  pb-2'>
-                    <p id="Name" className='display-5 text-light text-center overflow-hidden m-0'>Matthew Hamel</p>
+                    <p id="Name" className=' display-5 text-light text-center w-100 overflow-hidden m-0'><span className='highlight'>Matthew Hamel</span></p>
                   </div>
                   <hr id="NameDivider" className='w-100 text-center border-2' />
                   <div className='overflow-hidden'>
-                    <p id="JobTitle" className='display-6 fs-5 text-light text-center pt-3'>Web Developer and Software Engineer</p>
+                    <p id="JobTitle" className='display-6 fs-5 text-light text-center pt-3'><span className='highlight fw-light'>Web Developer</span> and <span className='highlight fw-light'>Software Engineer</span></p>
                   </div>
                 </section >
                 <section className=''>
                   <p className='row fs-6 ms-lg-2 text-center text-lg-start'>
                     <b className='text-light col-xl-4 col-4 ps-4 ps-lg-0'><i className="bi bi-geo-alt-fill me-3"></i>Location:</b>
-                    <span className='col-xl-8 col-8'>Silicon Valley, California</span>
+                    <span className='col-xl-8 col-8'>San Francisco Bay Area, California</span>
                   </p >
                   <p className='row fs-6 ms-lg-2 text-center text-lg-start'>
                     <b className='text-light col-xl-4 col-4 ps-2 ps-lg-0'><i className="bi bi-envelope-fill me-3"></i>E-mail:</b>
                     <span className='col-xl-8 col-8'>matt@matthewhamel.dev</span>
                   </p >
-                  <p className='ms-lg-2 text-lg-start p-3 p-lg-0'>
-                    <b className='text-light '><i class="bi bi-person-circle me-3"></i>About Me:</b> <br className='mb-3'/>
-                    <span className=''>
-                      I started programming as a part of my <Highlight>Engineering Coursework</Highlight> and later programmed for our <Highlight>Robotics Team</Highlight>. I even taught myself <Highlight>Java</Highlight> over the summer going into my Junior year.
+                  <div className='ms-lg-2 text-lg-start p-3 px-lg-0 py-lg-3'>
+                  <b className='text-light '><i class="bi bi-person-circle me-3"></i>About Me:</b> <br className='mb-3'/>
+
+                    <p className='fs-small' >
+                      I started programming as a part of my <Highlight>Engineering Coursework</Highlight> in highschool and later programmed for our <Highlight>Robotics Team</Highlight>. I even taught myself <Highlight>Java</Highlight> over the summer going into my Junior year.
                       <br/><br/>
-                      After highschool, I perused my passion and started working towards a degree in <Highlight>Computer Science</Highlight>. At <Highlight>Las Positas</Highlight>, I gained a foundation for <Highlight>OOP</Highlight> that I expanded on when I transferred to <Highlight>Cal State East Bay</Highlight>. 
+                      After highschool, I pursued my passion in computer programming and started working towards a degree in <Highlight>Computer Science</Highlight>. At <Highlight>Las Positas</Highlight>, I gained a foundation for <Highlight>OOP</Highlight> that I expanded on when I transferred to <Highlight>Cal State East Bay</Highlight>. 
                       At the same time, I was mentoring kids at <Highlight>theCoderSchool</Highlight>, teaching them the basics and more advanced topics in coding.
                       <br/><br/>
-                      Following my graduation from university, I started doing <Highlight>Freelance Web Development</Highlight> and am currently looking for new opportunities to expand my skill set and knowledge.
-                    </span>
-                  </p>
+                      Following graduation and receiving my bachelor's degree, I started doing <Highlight>Freelance Web Development</Highlight>. I am open to new and exciting opportunities to expand my skill set and knowledge.
+                    </p>
+                  </div>
                 </section>
               </div>
             </div>
@@ -77,8 +78,8 @@ function App() {
             </div>
           </div>
 
-          <DynamicContainer width='' bottom='8px'>
-            <section className='mx-0 ps-xl-5 mb-3 mb-xl-0'>
+          <DynamicContainer width='' bottom='0px'>
+            <section className='mx-0 ps-xl-5 mb-5 mb-xl-0 pb-xl-2' style={{backgroundColor: "var(--background-secondary)"}}>
               <h4 className='d-xl-none mx-auto text-center my-4 text-light'>Links</h4>
               <div className='Links d-flex flex-wrap justify-content-between'>
                 <ExpandingIcon icon="bi-file-earmark-pdf-fill" text="Résumé" url={resumepdf} index="4" />
@@ -130,8 +131,8 @@ function SectionBox({ title, children, topOffset }) {
 
 
   return (
-    <section id={title.replace(" ", "")} className='SectionBox ' ref={triggerRef}>
-      <p className="SectionTitle h2 fw-bold d-block mb-3" >{title}</p>
+    <section id={title} className='SectionBox ' ref={triggerRef}>
+      <p className="SectionTitle h2 fw-bold d-block" >{title}</p>
       {children}
     </section>
   )

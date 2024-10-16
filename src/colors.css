@@ -11,7 +11,7 @@
     
     --text-bright: #fff;
     --text: #eee;
-    --text-soft: #c8cccc;
+    --text-soft: #d0d4d4;
     --text-muted: #a8aaaa;
 
     --font-green: #05DA84;
@@ -49,10 +49,10 @@
 
 .text-shadow {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    color: #000; /* Black text color for high contrast */
+    color: #000; 
 }
 
 .image-shadow {
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the shadow as needed */
-    border-radius: 8px; /* Optional: add border radius for rounded corners */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
+    border-radius: 8px; 
   }

@@ -42,8 +42,8 @@ function SelectedEventProvider({ children }) {
 export function Highlight({ children }) {
     const highlighter = (letter, i) => { return letter === " " ? <span key={i}> </span> : <span key={i} className='highlight' style={{ "--index": i }}>{letter}</span> };
     return (
-        <span className='highlighted-text'>
-            {children.split("").map(highlighter)}
+        <span className='highlight'>
+            {children}
         </span>
     )
 }
@@ -178,14 +178,14 @@ export function Experience() {
                             <i className="bi bi-laptop text-light mx-auto my-3 h1 text-shadow" ></i>
                         </ColorTab>
                         <div className='my-3 mx-4' style={{ width: "85%" }}>
-                            <h5 className='fw-bold underline text-center mt-3'>Freelance Web Developer</h5>
+                            <h5 className='fw-bold underline text-center mt-3'>Web Development Contractor</h5>
                             <hr className='w-75 text-light text-center my-3 mx-auto' />
                             <p >
-                                Following graduation, I embarked on my <Highlight>freelance</Highlight> journey, developing <Highlight>applications and websites</Highlight> tailored to the unique needs of my clients.
+                                Following graduation, I embarked on my <Highlight>freelance</Highlight> journey, developing <Highlight>web applications and sites</Highlight> tailored to the unique needs of my clients.
                                 My passion lies in developing applications that exceed expectations both visually and functionally.
                             </p>
                             <p>
-                                My current projects consist of mostly <Highlight>web development</Highlight>, but I also have a few long-term <Highlight>software application</Highlight> projects that I contribute to.
+                                My current projects consist of <Highlight>web sites</Highlight> and a few long-term <Highlight>web application</Highlight> projects that I contribute to.
                                 I meticulously test each application to ensure it delivers an <Highlight>exceptional</Highlight> user experience while being within the client's specifications.
                             </p>
                             <p>
@@ -193,9 +193,10 @@ export function Experience() {
                                 Each project I undertake is a new opportunity to <Highlight>learn, grow, and contribute</Highlight> to the success of my clients' ventures, making every project a unique and rewarding experience.
                             </p>
                             <div className='d-flex flex-wrap w-100'>
-                                <TaggedText>HTML</TaggedText> <TaggedText>CSS</TaggedText> <TaggedText>Bootstrap</TaggedText> <TaggedText>SASS</TaggedText> <TaggedText>React.js</TaggedText>  <TaggedText>JavaScript</TaggedText> <TaggedText>TypeScript</TaggedText>
-                                <TaggedText>Java</TaggedText> <TaggedText>C#</TaggedText> <TaggedText>Python</TaggedText>
-                            </div>
+                                <TaggedText>JavaScript/TypeScript</TaggedText> <TaggedText>Next.js</TaggedText> <TaggedText>React.js</TaggedText> 
+                                <TaggedText>Node.js</TaggedText> <TaggedText>SQL</TaggedText> <TaggedText>MongoDB</TaggedText>  <TaggedText>HTML</TaggedText>  <TaggedText>CSS</TaggedText>
+                                <TaggedText>SASS</TaggedText> <TaggedText>Tailwind/Bootstrap</TaggedText> <TaggedText>Domain Management</TaggedText> 
+                                 </div>
                         </div>
                     </div>
                 </SubSectionBox>
@@ -213,16 +214,15 @@ export function Experience() {
                             <h5 className='fw-bold underline text-center mt-3'>Code Coach <span className="fw-normal">at</span> <b>theCoderSchool</b></h5>
                             <hr className='w-75 text-light text-center my-3 mx-auto' />
                             <p >
-                                During my tenure at <Highlight>theCoderSchool</Highlight>, I taught children aged 6-16 how to code through projects or helped them with homework.
-                                I tried to make each student's experience unique and exciting so that they would become <Highlight>passionate</Highlight> about their projects.
-                                During the summer, I was also responsible for <Highlight>organizing</Highlight> and <Highlight>instructing</Highlight> a large number of students for <Highlight>Summer Camps</Highlight> that would meet for around 5-6 hours a day for one week.
-                                I often took <Highlight>initiative</Highlight> and would sign up to teach multiple camps along with my usual workload.
-                                Projects ranged from beginners <Highlight>learning the basics</Highlight> to more advanced projects including <Highlight>Web Development</Highlight> and <Highlight>Game Development</Highlight>.
+                                During my time at <Highlight>theCoderSchool</Highlight>, I <Highlight>mentored</Highlight> students aged 6-18, teaching best practices across a range of programming languages and technologies, including <Highlight>web development</Highlight>, <Highlight>C++</Highlight>, <Highlight>C#</Highlight>, <Highlight>Java</Highlight>, <Highlight>Python</Highlight>, <Highlight>Unity Engine</Highlight>, and <Highlight>Android Studio</Highlight>. 
+                                I <Highlight>tailored</Highlight> instruction to each student, fostering a deep understanding and passion for coding through <Highlight>personalized project-based learning</Highlight> and tutoring. 
+                                I also <Highlight>organized and led summer camps</Highlight>, instructing groups of 15 to 30 students in week-long sessions lasting 5-6 hours per day. In addition to my regular teaching duties, I <Highlight>conducted trial sessions</Highlight> for prospective students, successfully converting many into long-term students by showcasing a valuable learning experience. 
+                                Projects ranged from introductory coding for beginners to advanced topics like <Highlight>object oriented programming</Highlight> and <Highlight>game development</Highlight>.
                             </p>
                             <div className='d-flex flex-wrap w-100'>
-                                <TaggedText>C++</TaggedText> <TaggedText>C#</TaggedText><TaggedText>Python</TaggedText><TaggedText>Java</TaggedText> <TaggedText>JavaScript</TaggedText>
-                                <TaggedText>HTML</TaggedText> <TaggedText>CSS</TaggedText> <TaggedText>Android Studio</TaggedText> <TaggedText>React.js</TaggedText> <TaggedText>Unity Game Engine</TaggedText> <TaggedText>Web Development</TaggedText>
-                                <TaggedText>Networking</TaggedText>
+                                <TaggedText>C++</TaggedText> <TaggedText>Python</TaggedText> <TaggedText>Java</TaggedText> <TaggedText>JavaScript</TaggedText><TaggedText>React.js</TaggedText> 
+                                <TaggedText>HTML</TaggedText> <TaggedText>CSS</TaggedText>  <TaggedText>Android Studio</TaggedText> <TaggedText>Best Practices</TaggedText>
+                                <TaggedText>Unity Game Engine</TaggedText> <TaggedText>C#</TaggedText>
 
                             </div>
                         </div>
@@ -321,7 +321,7 @@ export function Footer() {
                 This site was developed by me, <Highlight>Matthew Hamel</Highlight>, using a blend of <Highlight>HTML</Highlight>, <Highlight>CSS</Highlight>, <Highlight>React.js</Highlight>, <Highlight>Bootstrap</Highlight>, and <Highlight>Webpack</Highlight>.&nbsp;
 
                 Check out the &nbsp;
-                <a className='link-underline-light text-light' href='https://github.com/MDHamel/hamelsite2024' target='_blank' rel="noreferrer">code on GitHub</a>.
+                <a className='highlight link-underline-light text-light' href='https://github.com/MDHamel/hamelsite2024' target='_blank' rel="noreferrer">code on GitHub</a>.
             </small>
         </footer>
     )
